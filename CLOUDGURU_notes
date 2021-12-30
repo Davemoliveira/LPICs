@@ -614,3 +614,256 @@ ln -s [target] link name] > Creates symbolic link to target as a file[link name]
 
 
 
+DNS (Domain name system) domain name - Ip
+
+configuration /etc/resolv.conf -> Managed by network manager or Daemon service
+Gives nameserver 127.0.0.53
+
+host www.example.com -> Tell us the address aIPV6 | translate domain name into ipV4/6 address
+
+dig www.example.com -> Gives domain record details[internet record]
+dig @1.1.1.1 www.x.com -> Uses different server to access the info 1.1.1.1=cloudflare dns (troubleshooting own network)
+
+etc/hosts -> maps an ip adddress to localhost
+reference to hostname, edit the file | host www.x.com copy the IP | vim hosts file | add line IP and name it
+
+DNS resolution sequence
+
+DNS Hostnames -> IP
+Reverse DNS ip -> Hostnames 
+Hostnames = easy to remember (www.squarespace.com)
+
+
+QUERY NETWORK CONFIGURATION
+
+ip route show  > Show current routing table alternative: ip r s
+route > Add route table
+
+ip address show > Show current addresses alternative: ip a s
+
+
+ifconfig - View/change interfaces config | subnet | broadcast=final address on the range
+mac address: hardware device fingerprint address
+(marked for deletion)
+
+CMD: nmcli (network manager) - Print devices +info(routing, ip's etc)
+
+
+netstat / ss - List services and active connection (very similar)
+netstat -tlnp [tpc listening numeric showPIDs]
+cat /etc/services | grep [port number]
+
+
+
+NIC: ens38 / 33 / etc
+Network interface controller
+Check NETMASK | MAC ADRESS  | SUBNET | broadcast
+Try apache
+
+
+
+
+------ ROOT and standard users
+
+su change userID to become super user | su | su [other user name]
+sudo = elevating permissions to root -> etc/sudoers
+visudo = vi + superuser
+sudo su -  -> changes to root account it will have # instead of $ 
+/etc/passwd [7 fields]
+main dif is loginshell(system account does not have)
+
+
+SYSTEM USERS
+
+
+
+CREATING USER AND GROUPS
+
+
+List all users on the system CMD: cat/passwd each line | wc -l =  number of users
+
+sudo useradd dave | useradd dave
+passwd user = cmd to create password
+
+usermod usermod -s /binb/bash dave
+
+sudo mkhomedir_helper dave -> Create home dir for Dave user
+sudo useradd -m dalila -> Create user and home directory
+
+make users as admins
+/etc/group | grep sudo > getting the sudo group
+
+
+
+sudo groupadd homestudy
+sudo usermod -a -G homestudy Dave > Put myself into group -a(append) -G(Group) group dave
+restart profile: . /etc/profile | 
+access sudoers file add %groupname ALL=(ALL:ALL) ALL || save file
+
+
+
+USER IDs
+nobody user = sudo user representing user with the least of permissions.
+
+
+
+FILE/DIR PERM & OWNER
+
+USER GROUP ALL
+change group: chown :castudy test.txt
+group change: chmod 664 test file = rw rw r | chmod g+rw test file (group read write permissions)
+
+chown new_owner file.txt > Change ownership
+chown :groupname file.txt > Change file group ownership
+chown username:groupname file.txt > Change file user/group ownership
+Recursive - change permission on a dir: chown -R newuser 
+chmod +x file = make it executable
+
+
+
+SPECIAL FILES AND DIRS
+
+/var/temp => persists after system boot (Cleared after 30 days)
+/temp => Cleared after system boot
+
+mktemp = /auto.generated_url
+
+
+SYMBOLIC LINKS
+
+
+Symbolic link -> link to file/folder
+ln -s [target dir] symbolic_link_name
+
+
+
+
+
+HOW TO PREPARE FOR THE EXAM
+
+Practice the hands on lab - cover 80% of the content 
+Review Flash card - hard version of a question exam
+Take practice exam - Must ask dif.questions but same level of dificulty. Dont take questions
+Get plenty of Rest!!! Go to bed early
+Pay attention to the answer choices - some are filling blanks | eliminate the obvious choices
+Mark answers to review - don't spend a lot of time to manage time
+Be calm and confident - do not panic (take a few breaths)
+
+WHAT NEXT EXAM
+LPIC-1 System administrator > Certifications
+obj1 | obj2 -> more in depth regarding the lx essentials > more suitable for uncertainity on the future distro use
+RHCA - Read hat certified system admin (ex200) > RHCE Read hat certified engineer prep course
+
+KEEP WITH LX DATE
+Cloud guru this month < Resource for personal and professional use. 
+
+
+
+
+# BASIC SHELL SCRIPTING
+
+	#!/bin/bash: Defines interpreted to be used by the shell script
+	#Comments
+
+BASIC SCRIPT
+	#!/bin/bash
+	echo "Enter age:"
+	read age
+	echo -e "Your age is $age\n"
+the -e is to interpret the \n at the eol
+
+sh = shell script
+
+chmod  +x script.sh   = x for 3 (o/g/all)
+
+
+Without the ./ we need to modify path:
+	PATH=$PATH:$HOME/bin | echo $PATH
+
+
+
+Check DO WHILE
+
+IF Statements
+	#!/bin/bash
+	if [<some test>]
+  then
+	<command>
+	fi
+
+For Loops
+	#!/bin/bash
+	for i in 1 2 3; 
+		do echo $i
+	done
+
+COMMON TEXT EDITORS
+VIM
+gg  > Go to 1st line of file
+G   > Go to last line of file
+10G > Go to 10th line of file
+I   > Insert at start of line
+o   > Append line under the cursor
+
+NANO
+ctrl+X >[EDITING]Exit+Save prompt
+ctrl+o >[SAVING]]Exit+Save prompt
+
+
+
+
+
+
+IF statements
+
+![expression] >Expression is false
+-n[string] >String lenght >+ 0
+-z[string] >String lenght =0
+
+string1=string2
+string1 !string2 >1 not equal to 2
+
+int1-eq int2 > int1 equal to int2
+int1-gt int2 > int1 greater t int2
+int1-lt int2 > int1 lower t int2
+
+-d [file] >File Exist [directory]
+-e [file] >File Exist
+-r [file] >Exist+read.perm(ok)
+-s [file] >Exist+size >0
+-w [file] >Exist+write.perm(ok)
+-x [file] >Exist+execute.perm(ok)
+
+
+
+
+TEXT EDITORS
+
+
+VI 
+first line = gg
+bottom line = G
+specifc line = 10g
+/set number = line number displays
+
+VIMTUTOR > vim + tab = UTIL
+
+
+NANO
+crtl+_ = specific line
+
+
+
+TO DO = use GIT to grab the file and open with sublime
+
+
+
+
+ 
+
+
+
+
+
+
+
