@@ -864,6 +864,8 @@ TO DO = use GIT to grab the file and open with sublime
 List all users: getent passwd
 List all groups: getent group
 
+Check what groups the user belongs to: id <username> | groups <username> | cat /etc/groups | grep <username>
+Check user home directory and shell: getent passwd <username> | cat /etc/passwd | grep <username>
 
 
 
