@@ -867,7 +867,62 @@ List all groups: getent group
 Check what groups the user belongs to: id <username> | groups <username> | cat /etc/groups | grep <username>
 Check user home directory and shell: getent passwd <username> | cat /etc/passwd | grep <username>
 
+Create multiple users: for i in jen william matt sam anne danny kate bruce; do sudo useradd -m $i; done
+
+wget = download files
+
+mktemp - create temp file or directory: eg. temp_file=$(mktemp)
+
+
+Create a temporary file from a recursive directory listing of the archive folder.
+tmp_file=$(mktemp)
+ls -R sosreport-ip-10-0-1-11-2019-03-22-wxoxhnk/ >> $tmp_file
+
+Add ~/bin to the $PATH environment variable.
+echo 'PATH=$HOME/bin:$PATH' >> .bashrc
 
 
 
+.bashrc: Bash shell script that that runs. You can put commadns to setup the shell to use in your particular env. 
 
+
+
+Lock Bill's, Susan's, and Juan’s Accounts
+Run the following command:
+for i in bill susan juan; do sudo passwd -l $i; done
+
+
+Create Accounts for Nancy, Greg, and Jeremy
+Run the following commands:
+sudo useradd -m nancy
+sudo useradd -m greg
+sudo useradd -m jeremy
+
+
+
+Remove Bill as a User and Transfer Ownership of his Home Directory
+Remove the user bill.
+sudo userdel bill
+Change the ownership of Bill's home directory (recursively) to the user nancy and the group jason.
+sudo chown -R nancy:jason /home/bill
+Change the mode of the directory to grant read and execute permissions to the group.
+sudo chmod g+rx /home/bill
+
+
+Remove Susan as a User and Transfer Ownership of her Home Directory
+Remove the user susan.
+sudo userdel susan
+Change the ownership of Susan's home directory (recursively) to the user greg and the group jason.
+sudo chown -R greg:jason /home/susan
+Change the mode of the directory to grant read and execute permissions to the group.
+sudo chmod g+rx /home/susan
+
+
+
+Remove Juan as a User and Transfer Ownership of His Home Directory
+Remove the user juan.
+sudo userdel juan
+Change the ownership of Juan's home directory (recursively) to the user jeremy and the group sally.
+sudo chown -R jeremy:sally /home/juan
+Change the mode of the directory to grant read and execute permissions to the group.
+sudo chmod g+rx /home/juan
