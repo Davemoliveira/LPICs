@@ -1,7 +1,6 @@
 =====================================================================================================================================================
-
 									DISTROS
-				Collection of components that form a system distro with different layers.
+					Collection of components that form a system distro with different layers.
 							
 	1) Graphical: Interface (Desktop environment, common on Linux desktops (Gnome, KDE, Unity). Allows to navigate the OS with the device hardware.
 	2) X-Server: Enables GUI(Graphical user interface), the display server for X windows systems framework for GUI environments.
@@ -17,9 +16,7 @@
 					DEBIAN       GNOME | Init.soft: systemd | Release model: Rolling| Package: DEB
 
 =====================================================================================================================================================
-
 								  MAIN DIRECTORIES
-								
 					/           > Root directory
 					/bin        > User binaries (commands that can be run by users)
 					/boot       > Static boot files | Bootloader config & parameters & Linux Kernel | Initial RAM disk
@@ -27,14 +24,18 @@
 					/etc        > Configuration files from service and apps
 					  |-> /etc/fstab (Partition list to auto mount on the system)
 					  |-> /etc/passwd (List of local users & attributes)
-					  |-> /etc/group  (List of local users & attributes]
+					  |-> /etc/group  (List of local users & attributes - GRP,PWD,GID]
 					  |-> /etc/hosts  (List IP address/Hostname we want the system to be associated with)
 					  |-> /etc/<app>  (Application configuration files - Extension .conf)
+					  |-> /etc/resolv.conf (Managed by network manager or Daemon service)
+					  |-> /etc/skel   (Boilerplate files/folders for new accounts)
+					  |-> /etc/profile(Restart profile)
 					/home       > User home directory
 					/lib        > Libraries (shared)
 					/mnt        > Mount(temp mount)
 					/opt        > Optinal packages
 					/proc       > Kernel and file processes
+					  |-> /proc/cpuinfo 	(CPU info)
 					/root       > Root home directory
 					/run        > Application state files
 					/sbin       > sys.admin binaries (used by root)
@@ -49,11 +50,9 @@
 					  |-> /var/cron.log.   (Cron logs)
 					  |-> /var/logfail.    (Authentication fails)
 					/sys         > System devices(info) | Virtual file system & Data storage
-
+					
 =====================================================================================================================================================
-
 								CLOUD/APPLICATIONS
-								
 					CLOUD: REGIONS > AVAILABILITY ZONES > SUBNETS > COMPUTER INSTANCES
 					SERVER-APPS: Apache & NGINX
 					DB SERVER APPS: MYSQL & MARIADB
@@ -61,18 +60,14 @@
 					PRIVATE CLOUD APPS: Owncloud & Nextcloud(forked=+enterprise.support)
 
 =====================================================================================================================================================
-
 								PACKAGE MANAGEMENT
-
 					DPKG: Debian archive format that includes metadata(.deb)
 					APT: Debian auto install and dependencies (apt-get)	
 					RPM: Auto install package (source code)
 					YUM: Supports automatic updates and dependencies. DNF is replacing YUM.
 
 =====================================================================================================================================================
-
 								     COMMANDS
-
 	1. lsb_release -a (Check distro info)						1. w (Current logged user and history of other users login)
 	2. ls --version (Check foundation utils -alt)					2. env (all vars) printenv (vars+values)
 	3. cat /proc/version | cat/etc/issue (distro info - alt)			3. ls -alsh (List all size human)	
@@ -85,116 +80,40 @@
 	4. rm -r (delete directory recursively)						4. $PS1 (Display primary prompt string)
 	5. df -h (check disk usage)							5. $PATH (Path where shell looks for commands)
 	
-	1. ip addr show (Current address)
-	2. ip route show (Current route table)
-	3. ifconfig (View & change interface config)
-	4. netstat | ss (services and active connections)
-	5.
-
+	1. ip addr show (Current address)						1. route (Add route table)
+	2. ip route show (Current route table)						2. wget (Download files)
+	3. ifconfig (View & change interface config)					3. getent passwd (List all users)
+	4. netstat | ss (services and active connections)				4. getent group (list all groups)
+	5. dig www.x.com (Gives domain details +records)				5. useradd user (add user)
 	
-DNS (Domain name system) domain name - Ip
-configuration /etc/resolv.conf -> Managed by network manager or Daemon service
-Gives nameserver 127.0.0.53
-host www.example.com -> Tell us the address aIPV6 | translate domain name into ipV4/6 address
-dig www.example.com -> Gives domain record details[internet record]
-dig @1.1.1.1 www.x.com -> Uses different server to access the info 1.1.1.1=cloudflare dns (troubleshooting own network)
+	1. host www.example.com (IPv6, translate DNS into IPV4/6)			1. ps aux (Process list | Resource use)
+	2. groupadd [opt] (create group)						2. dmesg (View specifc kernel info from ring buffer)
+	3. chow [opt] user[:group] file (Change file owner)				3. free (Free memory- SWAP=RAM exceeded)
+	4. chow user:user [file]: Change file and group owner				4. lswh (List hardware components)
+	5. passwd username (upd.password						5. Lynx | 3wm | Links2 | Elinks (Terminal browser)
 
-etc/hosts -> maps an ip adddress to localhost
-reference to hostname, edit the file | host www.x.com copy the IP | vim hosts file | add line IP and name it
+	1. ping -c 2 www.x.com (Sends 2 pings to test connectivity)			1. mktemp [opt] [template] (Create temp file/dir)
+	2. Mapper (translate block devices to something else)				2. mktemp (Can be used to create adhoc files/dirs)
+	3. Crontab (Lists cron jobs, System scheduled tasks)				3. grep (Search for given input on files)
+	4. curl (Util to transfer from/to a server)					4. chmod 777 file1 (Give RWX permissions to all)
+	5. nmcli (Network manager - Print devices + info)				5. netstat -tlnp (tpc listening numeric showPIDs)
 
-DNS Hostnames -> IP
-Reverse DNS ip -> Hostnames 
-Hostnames = easy to remember (www.squarespace.com)
-route > Add route table
-wget = download files
-List all users: getent passwd
-List all groups: getent group
+	1. tar --delte --file=x.tar file.txt (DelFile)					1. tar -c(Create) -x(Xtract) -r(Append) -t(List) -f(R/W)
+	2. GZIP: Def.compression used by tar(balanced)					2. BZIP2: Alt (Slower but higher compression)
+	3. ZIP: All-in-one compress/archive util					3. gzip -9 (Compress with max compression level)
+	4. tar cvf backup.tar *tar (create tar file)					4. tarx xzf x.tar.gz y (Decompress file)
+	5. tar czf backup.tar.gz *.txt  (GZIP)						5. tar cjf backup.tar.bz2 *.txt (BZ2)
+	6. zip -r backup.zip *.txt      (ZIP)
 
-						2. Append path to 'scripts' dir to the $PATH var: PATH=$PATH:$HOME/scripts/
-						3. $PATH persist: ~/.profile | echo 'PATH="$PATH:$HOME/scripts"' >> ~/.profile
-> Escape character: x=Dave\ Oliveira | -> Dave Oliveira
-> Single quote:     x='Dave $surname'| -> Dave $surname
-> Double quote:     x="Dave"$surname"| -> Dave Oliveira
-> Escape character: x=Dave\ Oliveira | -> Dave Oliveira
-> Single quote:     x='Dave $surname'| -> Dave $surname
-> Double quote:     x="Dave"$surname"| -> Dave Oliveira
-                                      y="Dave" "\Da\"  | -> Dave "\da\"
-    2.1 var2= This is a blackslash "\" and this is a quote '.
-    2.2 var2=This is a blackslash \ "\\\" and this is a single quote '."
-    2.3 echo -e $var2 >> value.txt
-3. Set var3 to: 3 double quotes """, and 3 single q ''' and 3 backslashes \\\
-3.1 var3="3 double quotes \"\"\", 2 single q '' and 2 backslashes \\\\\\\
-4. Var4 with newline: var4="newline char \\\n will create new line."
-    4.1 echo -e $var4 >> value.txt
-	
-	
-	ps aux|ps -eF|top > ListProcesses[BSD/LX]format| Util 4view proc+resource use
-dmesg >View specKernel info from ringBuffer & print msg buffer 2 kernel
+	1. ? : Match any single character.						1. Escape char: x=Dave\ Oliveira  > Dave Oliveira									
+	2. * : Match any number of characters.						2. Single quot: x='Dave $surname' > Dave $surname		
+	3. []: Match character from range.						3. Double quot  x="Dave"$surname" > Dave Oliveira			
+	4. ^ : Used to match starting character.					4. Escape char: x=Dave\ Oliveira  > Dave Oliveira
+	5. $ : Used to match ending character.						5. Single quot: x='Dave $surname' > Dave $surname
+	6. {}: Match more than one pattern.						6. Double quot: x="Dave"$surname" > Dave Oliveira
+	7. | : Apply more than one condition.						7. 
 
 =====================================================================================================================================================
-
-									GLOBBING
-
-							? : Match any single character.										
-							* : Match any number of characters.			
-							[]: Match character from range.				
-							^ : Used to match starting character.
-							$ : Used to match ending character.
-							{}: Used to match more than one pattern.
-							| : Used to apply more than one condition.
-
-=====================================================================================================================================================
-
-																ARCHIVE
-
-						tar -c: Create 		-x: Extract		-r: Append		-t: List content	-f: Read/write file				
-						GZIP: -z			BZIP2: 
-							
-							
-tar --delete --file=archive.tar 3.txt -> Delete 3.txt from inside the tarball.
-GZIP: Default compression used by tar (-z) > balance/speed/compression
-BZIP2: Alternative > Slower than Gzip but higher compression
-ZIP: All-in-one compress/archive util with other OS.
-
-
-tar cvf backup.tar *.tar.    > Create Normal Tar file
-tar czf backup.tar.gz *.txt  > Create GZIP-file 
-tar cjf backup.tar.bz2 *.txt > Create BZ2-file 
-zip -r backup.zip *.txt      > Create ZIP-file 
-tar rf archive.tar append.txt > Append new file to the tar file.
-tar tvf archive.tar           > View changes | grep append.txt
-gzip -9 archive.tar           > Compress with max compression
-tar xzf archive.tar.gz linux_decompress.txt  > Decompress file
-grep: Search util for given input files sele.lines that match 1 or more pattern.
-cat file.txt | grep -E ^A
-Cat file +pipe grep to start with A within the file.txt
-cat file.txt | grep Apple | wc -l
-!wc -> Rerun wc last cmd (last time that was runned - not pipped) 
-cat /etc/passwd | grep username | cut -d: -f6
-Directory content: 1.txt 2.txt 3.txt | Path: /home/cloud_user
-ls | grep 1 > 1.txt
-pwd | grep cloud > /home/cloud_user
-cat file.txt | grep Apple > newfile.txt > Redirect to the file
-cat file.txt | grep Pear >> newfile.txt > Append to file
-cat 2.txt | sort > Sorted_file.txt
-grep Apple < sorted.txt -> Displays results (feed input) from file.
-Basic regular expressions (regex) are used to match patterns in text.
-"^Apple"      > Match start of the line
-"Applle$"     > Match end of line
-"^Apple$"     > Match start & end of the line
-"Apple|ball"  > Match either string or character
-"Ap*le"       > Match A, follow by zero or more p's followed by le:
-"Ap+le"       > Match A, follow by one or more p's followed by le
-"Ap?le"       > Match A, follow maybe a p, ollowed by le:
-"Ap[p-z]le"   > Match Ap follow by a letter between p & z, follow by le:
-cat file.txt | grep -E "^Apple"
-cat file.txt | grep -E "Apple$" -> EOL
-cat /proc/cpuinfo > CPU info
-free              > Free memory | Swap kicks in when ram is exceeded.
-lswh              > List hardware components
-	
-=====================================================================================================================================================
-
 								LICENCE
 
 		PUBLIC DOMAIN: Universal domain declaration, work has no restrinctions. License excerpt states that others can copy
@@ -217,213 +136,58 @@ lswh              > List hardware components
 
 		MAIN DIFFERENCES: Philosophy - lack of focus on the practical benefit of the software and more on ethics/rights/
 		FOR CONSIDERATION: Forks license needs examination. Permissive has no restrinctions, Derivative - owner retains
-		copyright of the original work.
+		copyright of the original work.   
 
 =====================================================================================================================================================
-
-    
-
-
-=====================================================================================================================================================
-
-																NETWORK							
-
-DNS(DomNameSys:4networkDevices must have address- maps DNS2IP [www.x.com ->IP]
-ping -c 4 www.google.com > Sends 4 pings to Google.com to test connectivity
-/etc/resolv/conf    > Config file to determine which hosts to use DNS queries
-/etc/hosts          > Used to statically mapped IP aadresses to hostnames
-
-
-Obs: Vmlinuz files = Kernels | initrd.img = Initial RAM disk
-     etc/resolv.conf = Specifcy nameserver
-     BSD format = Grouped and can't be used with a dash
-     Linux format = Grouped must be preceded with a dash
-         Mapper = Used to translate blockdevice to something else
-         Crontab = Lists cron jobs - System to schedule tasks [automation]
-         Curl = Util to transfer from/to a server
-     Switch Vs Router: Switch(tranf.on same network) | Router(outside network)
-
-Standard user(Unpriviledge account)
-Std.Accounts are provided a login shell, home dir, limited permissions for view
-system configurations and no permissions for modify sys configurations. They can access those by using sudo(super user).
-
-ROOT user(Admin account system)
-Full access to all syst.permissions and used for sys-level-admin. A more secure manner of admin is careful use of sudo priviledges.
-
-/etc/passwd:Username|Pass|UserID|GroupID|GECOS(longName)|Homedir|LoginShell(loginInterprete)
-/etc/shadow: Username|Pass|Lastchanged|Min|Max|wan|Inactive|Expire
-
-    * Password=hasged password value[encrypted]
-    * Lastchanged=Nr days since password change
-    * Min/Max=Nr days between password changes
-    * Warn= Nr days before pass expiration to warn user
-    * Inactive=Nr days since expiration
-    * Expire=Absolute expiration date
-
-/etc/group [group membership for local sys users and 4 fields]
-    * Group= Unique group name
-    * Password= Empty
-    * GroupID(GID)= Unique group ID
-    * Group List= a comma deliniated list of usernames that belong to the group 
-
-Application Service accounts
-System users are generally deployed when apps are installed, their home dirs are
-set to application folders and they do not have a login shell. The main purpose
-of having discreet users is to seperate functional priviledges from other apps
-and services.
-
+								OBSERVATIONS
+		Routers: Foward packages between the network			Netfilter: Kernel framewolrk to track dif.connections
+		High level: Components						Low level: Supports hardware functions
+		Sys-calls are made to Kernel-incorporated			Systemd: System/service manager for Linux OS
+		Absolute paths: Start with "/"					Relative paths: unique file/direction location
+		Loopback address: How it communicates itself			Hedless install: Only CLI (SSH remote) / No monitor
+		Hardware to file hierarchy by /dev and /sys			Kernel Right buffer: Holds Kernel operations messages
+		STDIN(0); STDOUT(1); STERR(2)					UID 0(ROOT);1-99(SYS.USER); +100(Standard)65534(Nobody)
+		MAC Address: Dev.hardware fingerprint address			WINDOWS SSH(Putty) SSH(SCP)
+  		Permissions - 1(Execute) 2(Write) 4(Read)			Lmlinuz files (Kernels)
+		LXDE|Mate|XFCE (lightweight desktops)				Unity (Heavy weight desktops)	
+		
+		/etc/passwd:
+			Username|Pass|UserID|GroupID|GECOS(longName)|Homedir|LoginShell(loginInterprete)
+		/etc/shadow: Username|Pass|Lastchanged|Min|Max|wan|Inactive|Expire
+			Password=#password value[encrypted]	    Lastchanged=Nr days since password change
+			Min/Max=Nr days between password changes    Warn= Nr days before pass expiration to warn user
+			Inactive=Nr days since expiration	    Expire=Absolute expiration date
 
 =====================================================================================================================================================
+								LABS
 
-								ADD USER/GROUP					
+	1. for i in {1..100}; do touch file_$1; done (create 100 files)		1. useradd username (Add user)
+	2. for i in X Y; do sudo useradd -n $i; done (create mult.users)	2. userdel username (delete user)							
+	3. for i in x y z; do sudo passwd -l $i; done (Lock user account)	3.
+	4. PATH=$PATH:$HOME/temp-dir (append directory to the $PATH var)	4.
+	5. echo PATH="$PATH:$HOME/temp-dir"' >> ~/.profile (persistent)		5.
+								
+								
+ADD/MODIFY USER: useradd -m dave (user+homedir) | usermod -s /bin/b bash dave
 
-			useradd user: (Add user)	
-			groupadd [opt] groupname: Create group
-			chow[opt] user[:group] file: Change file owner						passwd username (upd.password)			
-			chow user:user [file]: Change file and group owner						
-	
-	
-	/etc/skel   >  Boilerplate files/folders for new accounts
-
-USER_IDs(local users are given a unique ID number)
-
- 7 = Read|Write|Execute [rwx]
- 6 = Read|Write|
- 5 = Read|Execute.      [r-x]
- 4 = Read|
- 3 = Write|Execute
- 2 = Write|
- 1 = Execute|
-
-chmod 777 file1                    > RWX for all
-chmod 774 file1                    > RWX for owner; R for group & all
-chmod +x  file1                    > Add execute to current permissions
-chmod -w  file1                    > Remove write from current permissions
-
-TEMP FILES/FOLDERS(Create and working with temporary files and folders)
-
-mktemp[option][name template] > Create a temp file/dir
-mktemp can be used to create adhoc files/dirs with a random file name portio.
-Those files are not automatically removed.
-CMD: nmcli (network manager) - Print devices +info(routing, ip's etc)
-
-netstat / ss - List services and active connection (very similar)
-netstat -tlnp [tpc listening numeric showPIDs]
-cat /etc/services | grep [port number]
-
-NIC: ens38 / 33 / etc Network interface controller
-Check NETMASK | MAC ADRESS  | SUBNET | broadcast
-
-visudo = vi + superuser
-/etc/passwd [7 fields]
-usermod usermod -s /binb/bash dave
-sudo useradd -m dalila -> Create user and home directory
 make users as admins: /etc/group | grep sudo > getting the sudo group
-sudo groupadd homestudy
-sudo usermod -a -G homestudy Dave > Put myself into group -a(append) -G(Group) group dave
-restart profile: . /etc/profile | 
+usermod -a -G homestudy Dave > Put myself into group -a(append) -G(Group) group dave
 access sudoers file add %groupname ALL=(ALL:ALL) ALL || save file
-nobody user = sudo user representing user with the least of permissions.
 change group: chown :castudy test.txt
 group change: chmod 664 test file = rw rw r | chmod g+rw test file (group read write permissions)
 chown new_owner file.txt > Change ownership
 chown :groupname file.txt > Change file group ownership
 chown username:groupname file.txt > Change file user/group ownership
 Recursive - change permission on a dir: chown -R newuser 
-chmod +x file = make it executable
-mktemp = /auto.generated_url
-
-ock Bill's, Susan's, and Juan’s Accounts
-for i in bill susan juan; do sudo passwd -l $i; done
 
 Remove Bill as a User and Transfer Ownership of his Home Directory
-Remove the user bill.: sudo userdel bill
 Change the ownership of Bill's home directory (recursively) to the user nancy and the group jason.: sudo chown -R nancy:jason /home/bill
 Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/bill
 
-Remove Susan as a User and Transfer Ownership of her Home Directory: Remove the user susan.:sudo userdel susan
-Change the ownership of Susan's home directory (recursively) to the user greg and the group jason.: sudo chown -R greg:jason /home/susan
-Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/susan
+Remove Roy as user and transf.ownership to their home dir go greg: sudo userdel roy | show -R greg:roy /home/roy
 
-Remove Juan as a User and Transfer Ownership of His Home Directory
-Remove the user juan: sudo userdel juan
+Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/susan
 Change the ownership of Juan's home directory (recursively) to the user jeremy and the group sally: sudo chown -R jeremy:sally /home/juan
 Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/juan
-
-Check what groups the user belongs to: id <username> | groups <username> | cat /etc/groups | grep <username>
-Check user home directory and shell: getent passwd <username> | cat /etc/passwd | grep <username>
-Create multiple users: for i in jen william matt sam anne danny kate bruce; do sudo useradd -m $i; done
-mktemp - create temp file or directory: eg. temp_file=$(mktemp)
-Create a temporary file from a recursive directory listing of the archive folder.
-tmp_file=$(mktemp)
-ls -R sosreport-ip-10-0-1-11-2019-03-22-wxoxhnk/ >> $tmp_file
-
-=====================================================================================================================================================
-
-								SHELL SCRIPT
-
-do while,  loops, variables, if statements
-
-string1=string2
-string1 !string2 >1 not equal to 2
-
-int1-eq int2 > int1 equal to int2
-int1-gt int2 > int1 greater t int2
-int1-lt int2 > int1 lower t int2
-
--d [file] >File Exist [directory]
--e [file] >File Exist
--r [file] >Exist+read.perm(ok)
--s [file] >Exist+size >0
--w [file] >Exist+write.perm(ok)
--x [file] >Exist+execute.perm(ok)
-
-=====================================================================================================================================================
-
-								OBSERVATIONS
-
-		Routers: Foward packages between the network			Netfilter: Kernel framewolrk to track dif.connections
-		High level: Components									Low level: Supports hardware functions
-		Sys-calls are made to Kernel-incorporated				Systemd: System/service manager for Linux OS
-		Absolute paths: Start with "/"							Relative paths: unique file/direction location
-		Loopback address: How it communicates itself			Hedless install: Only CLI (SSH remote) / No monitor
-		Hardware to file hierarchy by /dev and /sys
-
-
-for i in {1..1000}; do touch file_$i; done
-
- Input(STDIN[0]) command is send to the interpreted to be parsed/executed which 
- can be redirected or moved to the STOUT[1]/STERR[2]. We can leverage 2 types
- of output[example: redirect SDTOUD to a file while watching error msgs].'
- An exit status states that the cmd was successful or not, but will not display on the stdout. 
-
-PROCESSES & SYSTEM MESSAGING[Kernel messages](Data used by running processes)
-PROCESS DATA      > Process data is stored /proc with individual <PID folders
-KERNEL RING BUFFER:Holds msgs to Kernel Operations | ConstantSize buffer
-Sys.logging proctocol: syslog, rsyslogd [Syslog=service perform msg collection]
-
-    UID 0 = Root account
-    UID 1-99 = System users
-    UID 100+ = Standard users
-    UID 65534 = Nobody user 
-	
-	mac address: hardware device fingerprint address
-	**OpenSrc&Licensing:**Licenses=rules/guidelines on how the work will be used by others
-allowing others to contribute withing seeking permission initially. **Top 3 licenses:**
-When addressing LX desktop environments, it can be break to 2 broad categories. 
- We have the lightweight desktop for limited resources-old-systems
- (**LXDE, Mate and XFCE**). On the other end of the spectrum, **Unity**(heavy resource)
-
- **>** Unity is Ubuntu implementation of Gnome (difference > Launcher). 
- > Cinnamon is an older version of Gnome with menus at the top.
- > KDE similar to windows 7/XP with a start menu'
-Depending on the distro, we can change after the installation, users can edit 
- files/folders of other users. Encryption is an option, but root can access it!'
-On Windows, we need to emulate terminal(Putty). To connect user by SHH we need:'
-Remote content copy(SCP) | No password(Shared keys) | Recurring/auto processes
-
-Add ~/bin to the $PATH environment variable.
-echo 'PATH=$HOME/bin:$PATH' >> .bashrc
-
-.bashrc: Bash shell script that that runs. You can put commadns to setup the shell to use in your particular env. 
-crontab -l List cron jobs - system to schedule tasks, automate tasks
+- Check which groups user is in: id username | group username | cat /etc/groups | grep username
+- Check user home directory & shell: getent passwd username | cat /etc/passwd | grep username
