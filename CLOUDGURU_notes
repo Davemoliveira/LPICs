@@ -1,223 +1,122 @@
-|||| 1.0 LINUX EVOLUTION AND POPULAR OPERATING SYSTEMS
-    'LINUX DISTROS:Collection of components that form a system distro with different layers.'
-    \\ 1] 'GRAPHICAL': Interface(desktop env), common LX desktops[Gnome/KDE/Unity/MATE/Xfce] env. to allow to navigate OS with hardware.
-    \\ 2] 'X SERVER': Enables GUI, the display server for X windows system framework for GUI environment.
-    \\  ] X architecture is agnostic and framework for remote graphical user interface and input devices.
-    \\ 3] 'GNU CORE': Basic utils(shell,text edit, change file permissions, write files, etc).
-    \\ 4] 'LINUX KERNEL': Free-Opensource OS kernel-framework, connects apps layer to hardware+drivers.
-    \\ 5] 'HARDWARE': Physical devices being compute resource(processing capability/short/long term data storage
-    \\ OBS:\\ System calls are made to the kernel-Incorporated. Hardware to file-hirarchy by '/dev'and'sys/'
+=====================================================================================================================================================
 
-||||COMMANDS||||
-    lsb_release -a  > Check distro
-    uname -r        > Check kernel version
-    ls --version    > Check foundation utils version
-    sudo X -version > Check X server version
+																DISTROS
+							Collection of components that form a system distro with different layers.
+							
+	1) Graphical: Interface (Desktop environment, common on Linux desktops (Gnome, KDE, Unity). Allows to navigate the OS with the device hardware.
 
-||||DISTROS||||
-    \\ RHEL         GNOME | **Init.soft:** systemd | **Release model:** Fixed  | **Package:** RPM
-    \\ CENTOS       GNOME | **Init.soft:** systemd | **Release model:** Fixed  | **Package:** RPM
-    \\ FEDORA       GNOME | **Init.soft:** systemd | **Release model:** Rolling| **Package:** RPM
-    \\ OPEN.SUSE.   KDE   | **Init.soft:** systemd | **Release model:** Rolling| **Package:** RPM
-    \\ UBUNTU       GNOME | **Init.soft:** systemd | **Release model:** Rolling| **Package:** DEB
-    \\ DEBIAN       GNOME | **Init.soft:** systemd | **Release model:** Rolling| **Package:** DEB
-    \\Obs: Rolling = constantly being updated
+	2) X-Server: Enables GUI(Graphical user interface), the display server for X windows systems framework for GUI environments.
 
-||||EMBED.OSs||||[ 'Hardware & Software combo for specific purposes & use libs to work' ]
-    \\ 'ANDROID': Mobile OS for touchscreen devices [GMS prop.softw]. Device hardware[low-level-interface] leveraged by
-    \\ OS kernel drivers, FS is required to use low-level interface(e.g bluethooth). Fi
+	3) GNU Core: Basic utils such as [shell] [text editor] [change file permissions][etc].
 
-    \\ 'PI': Uses rasbian(debian), uses system-on-chio [SOCs] with specific Lx version + drivers.
-    \\ OBS:\\Routers=foward packages between network \\Netfilter: Kernel framework to track different connections.
-    \\ OBS:\\HighLevel=Components \\ LowLevel=Support hardware functions
+	4) Linux Kernel: Free open-source OS kernel-framework that connects applications layer to the hardware and respective drivers.
 
-||||NETWORK||||[ 'Network to communicate with other devices. Low-level interface need to support device functions' ]
-||||LXCLOUD||||[ 'Soft/hardw services by internet. Different layers | Infrastructure | Components terminology' ]
-    \\  > REGIONS: Datacenters collection independent from other regions [fault-tolerance]
-    \\  > A.ZONES: Datacenters with low-level connections to communicate with other datacenters [fault-tolerance]
-    \\  > SUBNET: Instance for cloud computer resources to access the cloud. Multiple instances can exist in 1 subnet.
-    \\  > COMP.INSTANCES: Virtual instance [multi.OS] installed/run at the same time and duplicated into dif. zones.
+	5) Hardware: Physical devices with compute resources and ability to process and save data for short or long terms. 
 
-||||MAJOR-OPEN-SOURCE-APPS||||
-    \\  > OPENOFFICE[apacheSoftw] \ LIBREOFFICE[OpenSrc] \ [irefox(2002-Mozilla] \ Thunderbid[Rss/email/LC] \ GIMP
+							RHEL         GNOME | Init.soft: systemd | Release model: Fixed  | Package: RPM
 
-||||SERVER-APPLICATIONS||||
-    \\  > Apache: Webserver-host to internet[openSrc] checks incoming connections from ports [80/443] from web browsers.
-    \\  > NGINX: Webserver for reverse proxy, loadBalance, MailProxy, HTTPCache.
-    \\Obs: Proxying: request something else and load balance is managed betweeen hosts.
+							CENTOS       GNOME | Init.soft: systemd | Release model: Fixed  | Package: RPM
 
-||||DB-SERVER-APPS||||
-    \\  > MYSQL: OpenSrc relDB management sys with LX[Apache\PHP\Perl\Python]. For web deployment[web content backend].
-    \\  > MARIADB: Developed by community as MYSQL form for compatibility between MYSQL.
+							FEDORA       GNOME | Init.soft: systemd | Release model: Rolling| Package: RPM
 
-||||FILE-SHARING-APPS||||
-    \\  > SAMBA: LX file sharing software that allows file share by native connection FS[CIFS] Used in LANS for file print.
-    \\  > NFS: FS network distributed FS protocol to access file/dirs over the network as it was a local storage.
+							OPEN.SUSE.   KDE   | Init.soft: systemd | Release model: Rolling| Package: RPM
 
-||||PRIVATE-CLOUD-APPS||||
-    \\  > OWNCLOUD: Create own small cloud - requires server install on host(local.desktop). Allows online editing/sync.
-    \\  > NEXTCLOUD: Forked[OpenSrc] - Forks are more close-source for enterprise support.
+							UBUNTU       GNOME | Init.soft: systemd | Release model: Rolling| Package: DEB
 
-||||DEVELOPMENT-LANGUAGES||||
-    \\  > Shell: For bash [shell scripts] used for automation [for loops scripts, etc]
-    \\  > C: Instruc.machine on how change status for compile. Binaries are exec.[browser > writecode > compile > executable]
-    \\  > JAVA: Obj.ori for compiple/run [java runtime]. ObsOri means instructions are grouped with part of state they operate.
-    \\  > JS: Dedicated JS engine for webpages instructions[interactive]. Used for frontend UI.
-    \\  > PERL: High level language supprots procedural objOri with 3rdParty modules. Mostly used to path online services.
-    \\  > PYTHON: Interpreted general purpose language with focus on single methods. Extensive objOri.
-    \\  > PHP: For web developement which combines HTML with other web frameworks/templates. Free under PHP license.   
+							DEBIAN       GNOME | Init.soft: systemd | Release model: Rolling| Package: DEB
 
-||||PACKAGE-MANAGEMENT||||[ 'File collection needed to install apps' ]
-    \\  > DPKG[debian]: Pakage archive format including metadata[.deb]
-    \\  > APT: Auto-installl + Dependencies # apt-get
-    \\  > RPM: Auto-install package [source code] # rpm
-    \\  > YUM: Supports auto.updates, dependencies. DNF replaced it on Fedora because +performance +dependencies-resolution. 
+=====================================================================================================================================================
 
-||||OPEN-SOURCE-LICENSING||||[ 'Freedmon to use/modify/redistribute OpenSrc code [forking > Software developers' ]
-    \\  >  When forked, license needs examination if its free/OpenSrc.
-    \\  >  Fork consideration: Permissive=lic.[no restrinctions] Derivative [work copyright]
-    \\  >  Soft.licenses can be 'permissive', 'lot permissive','little copyLeft' or 'lot-copyleft'.
+														MAIN DIRECTORIES
+								
+							/           > Root directory
+							/bin        > User binaries (commands that can be run by users)
+							/boot       > Static boot files
+							/dev        > device files (block/terminal devices/etc - most pseudo devices)
+							/etc        > Configuration files from service and apps
+							/home       > User home directory
+							/lib        > Libraries (shared)
+							/mnt        > Mount(temp mount)
+							/opt        > Optinal packages
+							/proc       > Kernel and file processes
+							/root       > Root home directory
+							/run        > Application state files
+							/sbin       > sys.admin binaries (used by root)
+							/srv        > Service data
+							/tmp        > Temp files (purged after reboot / var/temp(purged after 30 days)
+							/usr        > User binaries
+							/var        > Variable data files
 
+=====================================================================================================================================================
 
+														CLOUD/APPLICATIONS
+								
+							CLOUD: REGIONS > AVAILABILITY ZONES > SUBNETS > COMPUTER INSTANCES
+							SERVER-APPS: Apache & NGINX
+							DB SERVER APPS: MYSQL & MARIADB
+							FILESHARING APPS: Samba(allows native connection for LANs) & NFS(+local)
+							PRIVATE CLOUD APPS: Owncloud & Nextcloud(forked=+enterprise.support)
 
+=====================================================================================================================================================
 
+														PACKAGE MANAGEMENT
 
+							DPKG: Debian archive format that includes metadata(.deb)
+							APT: Debian auto install and dependencies (apt-get)
+					
+							RPM: Auto install package (source code)
+							YUM: Supports automatic updates and dependencies. DNF is replacing YUM.
 
-**OpenSrc&Licensing:**Licenses=rules/guidelines on how the work will be used by others
-allowing others to contribute withing seeking permission initially. **Top 3 licenses:**
+=====================================================================================================================================================
 
-**1)Public domain(Creative Commons 1.0):**Universal publicDomain declarat. works on all
-in publicDomain, work has no restrinctions. License excerpt states that others can
-copy/modif/distribute/perform work even for commercial goals without permissions.
+																COMMANDS
 
-2Permissive(BSD licenses) 4 Clauses
-	1)**clause states redistributions of
-  source code retain the above copyright notice.
-  **2)** redistributions in binary 
-  form must reproduce the above copyright notice that list of conditions. 
-  **3)** all advertising materials where mentioned features or use of the software
-  must display the following acknowledgement "***product inc.software by x, etc***". 
-  **4):** neither orgamization name or contributors names can be used to endorse
-  or promote products derived from the software without prior written permission.'
+	1. lsb_release -a (Check distro info)									1. w (Current logged user and history of other users login)
+	2. ls --version (Check foundation utils -alt)							2. env (all vars) printenv (vars+values)
+	3. cat /proc/version | cat/etc/issue (distro info - alt)				3. ls -alsh (List all size human)	
+	4. uname -r | cat /proc/version (Kernel version)						4. ls -lh				 
+	5. x -version (Checks X server version)									5. ls -A (List all files, including hidden)
 
-**3)Copyleft(GPL)**
-	'Work can only be distributed under same license terms. Forks created towards
-  right license is copied from the left(hence the name copyleft. This license 
-  allows commercial use modification, distribution but restricts sub-licensing 
-  and must include the original work as the state of changes.'
+	1. mdkir | mkdir -p (parent)											1. ln -s (create symbolic link)
+	2. cp -r [][] (copy directory)											2. x=$(ls) (Execute command on variable)
+	3. mv [][] (move directory)												3. $HOME (Displays current home directory)
+	4. rm -r (delete directory recursively)									4. $PS1 (Display primary prompt string)
+	5. df -h (check disk usage)												5. $PATH (Path where shell looks for commands)
+	
+	1. ip addr show (Current address)
+	2. ip route show (Current route table)
+	3. ifconfig (View & change interface config)
+	4. netstat | ss (services and active connections)
+	5.
 
-**EXAMPLES**: MIT license is in the permissive area, where it can go from P.domain 
-but we can get an MIT lic. to a BSD, a BSD to an Apache, meaning that we can 
-take a work from creative works/public, fork it and license it under MIT.
+	
+DNS (Domain name system) domain name - Ip
+configuration /etc/resolv.conf -> Managed by network manager or Daemon service
+Gives nameserver 127.0.0.53
+host www.example.com -> Tell us the address aIPV6 | translate domain name into ipV4/6 address
+dig www.example.com -> Gives domain record details[internet record]
+dig @1.1.1.1 www.x.com -> Uses different server to access the info 1.1.1.1=cloudflare dns (troubleshooting own network)
 
-****#####**FS& OSI(OpenSoftFoundation & OpSrc Initiative)**#####
-**OSI** 'Where individuals from both sides work with  each other on free open-source 
- projects. Both support free, modified software and open-available source-code. 
- The main difference in philosophies is a lack of focus on the practical benefit
- the software and more on ethics/rights restrictions on proprietary software.'
+etc/hosts -> maps an ip adddress to localhost
+reference to hostname, edit the file | host www.x.com copy the IP | vim hosts file | add line IP and name it
 
-**FSF**'To a software be truly free, it must guarantee four(4) freedoms to its users:
- 1. Freedom to run the prog as we wish for any purpose.
- 2. Freedom to study how the prog work/change/control source code(pre-condition)
- 3. Freedom to redistribute copies to help others/friends
- 4. Freedom to redistribute copies of the modified version to the community.'
- ****FSF considers that software that doesn't meet all criteria as non-free/unethical.''
-FSF:Free software foundation
-||||OFOSSvsFLOSS||||
-    > FLOSS: [Monitization-restrinctions]
-    > FOSS:  [OpenSrc-Free ]
+DNS Hostnames -> IP
+Reverse DNS ip -> Hostnames 
+Hostnames = easy to remember (www.squarespace.com)
+route > Add route table
+wget = download files
+List all users: getent passwd
+List all groups: getent group
 
-||||DESKTOP-SKILLS||||
-
-
-
-
-When addressing LX desktop environments, it can be break to 2 broad categories. 
- We have the lightweight desktop for limited resources-old-systems
- (**LXDE, Mate and XFCE**). On the other end of the spectrum, **Unity**(heavy resource)
-
- **>** Unity is Ubuntu implementation of Gnome (difference > Launcher). 
- > Cinnamon is an older version of Gnome with menus at the top.
- > KDE similar to windows 7/XP with a start menu'
-**USER SPACE PRIVACY==================================================================**
-Depending on the distro, we can change after the installation, users can edit 
- files/folders of other users. Encryption is an option, but root can access it!'
-On Windows, we need to emulate terminal(Putty). To connect user by SHH we need:'
-
-**BENEFITS**
-Remote content copy(SCP) | No password(Shared keys) | Recurring/auto processes
-
-
-
-
-
-
-
-
-
-
-
-
-
-|||||||||||||||         2.0 LINUX COMMAND LINE BASICS            |||||||||||||||
-
-COMMAND LINE BASICS
-'The standard Lx shell(BASH) is a CLI interpreter and prog.lang. On bash, $
- represents that its a normal user (root=#) and the ~ is home directory.
- Input(STDIN[0]) command is send to the interpreted to be parsed/executed which 
- can be redirected or moved to the STOUT[1]/STERR[2]. We can leverage 2 types
- of output[example: redirect SDTOUD to a file while watching error msgs].'
-
-    ls | ls -   a | ls -h | ls -ah > 'same output'
-    ls -lh > 'Lists human data, including permissions' | ll > Alternative
-    ls -ls > Size field | ls -alsh > File size field including 
-
-
-OMMAND LINE SYNTAX
-
-An exit status states that the cmd was successful or not, but will not display on the stdout. Redirection example: 
-
-> Current directory: f1 f2 f3 f4 (files) | ls -all | ls -a
-> View all files listed, human readable, size info = ls -alsh [all list size human]
-
-VARIABLES
-
-    x='1' | echo $x | -> 1
-    y=$(ls)|-> Display LS output | ()=anything inside will be exec.
-    $HOME | -> Current user home directory
-    $PS1  | -> Primary prompt string
-    $PATH | -> Colon-sep dir list where shell looks for commands.
-    
-    Bash prompt: u=user | W=working dir
-
-
-QUOTING
-
+						2. Append path to 'scripts' dir to the $PATH var: PATH=$PATH:$HOME/scripts/
+						3. $PATH persist: ~/.profile | echo 'PATH="$PATH:$HOME/scripts"' >> ~/.profile
 > Escape character: x=Dave\ Oliveira | -> Dave Oliveira
 > Single quote:     x='Dave $surname'| -> Dave $surname
 > Double quote:     x="Dave"$surname"| -> Dave Oliveira
-
 > Escape character: x=Dave\ Oliveira | -> Dave Oliveira
 > Single quote:     x='Dave $surname'| -> Dave $surname
 > Double quote:     x="Dave"$surname"| -> Dave Oliveira
                                       y="Dave" "\Da\"  | -> Dave "\da\"
-
---------------------------------------------------------------------------------
-|||||||||||||||                2.1 HANDS-ON LAB                 |||||||||||||||
---------------------------------------------------------------------------------
-HANDS-ON LAB
-1. Determine current working directory: pwd
-2. Determine which user is in and last users to login: w | last | cd ~
-3. Record your findings in /home/could/user: w > log.txt | last >> log.txt
-
-VARIABLES
-1. Examine all env.variables and current $PATH var: env | echo $PATH
-2. Append path to 'scripts' dir to the $PATH var: PATH=$PATH:$HOME/scripts/
-3. $PATH persist: ~/.profile | echo 'PATH="$PATH:$HOME/scripts"' >> ~/.profile
-
-QUOTING
-1. Set var1 to: This is 'just' a "test" | echo -e $var1 > file.txtf
-2. Append var2 to the file
     2.1 var2= This is a blackslash "\" and this is a quote '.
     2.2 var2=This is a blackslash \ "\\\" and this is a single quote '."
     2.3 echo -e $var2 >> value.txt
@@ -225,169 +124,62 @@ QUOTING
 3.1 var3="3 double quotes \"\"\", 2 single q '' and 2 backslashes \\\\\\\
 4. Var4 with newline: var4="newline char \\\n will create new line."
     4.1 echo -e $var4 >> value.txt
+	
+	
+	ps aux|ps -eF|top > ListProcesses[BSD/LX]format| Util 4view proc+resource use
+dmesg >View specKernel info from ringBuffer & print msg buffer 2 kernel
 
-MAN PAGES
+=====================================================================================================================================================
 
-type "/"         > Search within man page " lower n (next) Capital N = (upper)
-man -k [keyword] > Search for man pages with specific keyword (Similar to apropos)
-echo $0 = OK (exit status)
+																GLOBBING
 
-INFO PAGES
-Info pages provide further/detailed info on commands. In some cases, it will pull
-Info from the man pages.It uses a structure for linking pages together into a
-collection. It can be invoked with: info [command] 
+												? : Match any single character.										
+												* : Match any number of characters.			
+												[]: Match character from range.				
+												^ : Used to match starting character.
+												$ : Used to match ending character.
+												{}: Used to match more than one pattern.
+												| : Used to apply more than one condition.
 
-Sections: [Name] [Synopsis] [Description] [Description] [examples]
+=====================================================================================================================================================
 
-"info = (manages)" -> Pulls info from man_pages.
-u(Up) | n(Next) | p(Previous) | /(Search)
+																ARCHIVE
 
-
-2.3 USING DIRECTORIES & LIST FILES
-
-pwd         > Current location
-cd <newloc> > Change directory
-cd -        > Go back to the last directory
-cd ..       > Go up one level
-cd ../..    > Go up two levels
-
-MAIN DIRECTORIES
-/           > Root directory
-/bin        > User binaries (commands that can be run by users)
-/boot       > Static boot files
-/dev        > device files (block/terminal devices/etc - most pseudo devices)
-/etc        > Configuration files from service and apps
-/home       > User home directory
-/lib        > Libraries (shared)
-/mnt        > Mount(temp mount)
-/opt        > Optinal packages
-/proc       > Kernel and file processes
-/root       > Root home directory
-/run        > Application state files
-/sbin       > sys.admin binaries (used by root)
-/srv        > Service data
-/tmp        > Temp files
-/usr        > User binaries
-/var        > Variable data files
-
-HIDDEN FILES
-Hidden files are not visible through the normal listing [usually with .xyz]. We
-can list it through ls -l. When accessing a directory, the [.] represents the 
-current directory and the [..] represents the directory above. The . files main
-purpose is to prevent cluttering of files within the directories.
-
-ls -A        > Display almost everything [will ignore . or ..]
-
-HOME_DIRECTORIES
-Home directories contain user files and directories.
-cd           > Without any parameters, it represents /home
-~            > Represents /home
-$HOME        > Env.variable used to store home directory
-env          > Display all env.variables for the user
-
-
-ABSOLUTE&RELATIVE PATHS
-Absolute and relative paths are unique location of a file/directory. Absolute
-paths always start with a / and releative path does not [examples img bellow].
-
-cat ./file > This will display file output [adding the ./]
-
-
-2.4 WORKING WITH FILES
-
-COMMANDS
-mkdir         > New dir  | -p [parent] e.g mkdir folder1/folder2/x/
-cp -r <x><y>  > Copy dir [x=source] [y=destination] | 
-mv <x><y>     > Move dir [x=source] [y=destination]
-rm -r <dir>   > Dele dir [recursively]
-
-CASE SENSITIVITY
-Most distros are case sensitivy, therefore it can create duplicated files/cmds. 
-mkdir x y     > new folder = 2 folders [new][folder]
-mkdir x\ y    > new\ folder = 1 folder [New folder]
-
-SIMPLE GLOBBING
-Using partial matching to work with group of files or directories
-?            > Match any single character.
-*            > Match any number of characters.
-[]           > Match character from range.
-^            > Used to match starting character.
-$            > Used to match ending character.
-{}           > Used to match more than one pattern.
-|            > Used to apply more than one condition.
-
-EXAMPLES -> Directory = file1 file2 file3 filexa filyb
-
-    > ls file? = file1 file2 file3 filex [5 characters]
-    > ls file* = file1 file2 file3 filex [5 characters]
-    > ls file* = file1 file2 file3 filex [5 characters]
-    > ls ??????* = filexa filyb [6 characters]
-    > ls * = file1 file2 file3 filexa filyb
-    > ls *1 = file1
-    > ls *[1-2] = file1 file2 
-    > ls *[[:digit:]] = file1 file2 file3
-
-CREATE 1000 files [empty]
-for i in {1..1000}; do touch file_$i; done
-
-
-ARCHIVING FILES/DIRS
-Archiving: Process of combining multiple files/directories into a single file
-
-tar -c        > Create archive
-tar -x        > Extract
-tar -r        > Append to archive
-tar -t        > Content list from archive
-tar -f        > Read from or write to file
-
-tar cf archive.tar *.txt | tar xf archive.tar -> CREATE / EXTRACT
+						tar -c: Create 		-x: Extract		-r: Append		-t: List content	-f: Read/write file				
+						GZIP: -z			BZIP2: 
+							
+							
 tar --delete --file=archive.tar 3.txt -> Delete 3.txt from inside the tarball.
-
-ARCHIVE AND COMPRESSION
 GZIP: Default compression used by tar (-z) > balance/speed/compression
 BZIP2: Alternative > Slower than Gzip but higher compression
 ZIP: All-in-one compress/archive util with other OS.
 
-Check disk usage: df -h
-Test file: /usr/share/dict/linux-words.txt
+
+
+
+
 tar cvf backup.tar *.tar.    > Create Normal Tar file
 tar czf backup.tar.gz *.txt  > Create GZIP-file 
 tar cjf backup.tar.bz2 *.txt > Create BZ2-file 
 zip -r backup.zip *.txt      > Create ZIP-file 
-
 tar rf archive.tar append.txt > Append new file to the tar file.
 tar tvf archive.tar           > View changes | grep append.txt
 gzip -9 archive.tar           > Compress with max compression
 tar xzf archive.tar.gz linux_decompress.txt  > Decompress file
-
-COMMAND PIPES======================================================================
-Piping: process of using cmd output as input of another.
 grep: Search util for given input files sele.lines that match 1 or more pattern.
-
 cat file.txt | grep -E ^A
 Cat file +pipe grep to start with A within the file.txt
 cat file.txt | grep Apple | wc -l
 !wc -> Rerun wc last cmd (last time that was runned - not pipped) 
 cat /etc/passwd | grep username | cut -d: -f6
-
 Directory content: 1.txt 2.txt 3.txt | Path: /home/cloud_user
 ls | grep 1 > 1.txt
 pwd | grep cloud > /home/cloud_user
-
-I/O REDIRECTION====================================================================
-
-I/O Redirection can be used to feed input to cmd from a file, vice-versa.
-
 cat file.txt | grep Apple > newfile.txt > Redirect to the file
 cat file.txt | grep Pear >> newfile.txt > Append to file
 cat 2.txt | sort > Sorted_file.txt
 grep Apple < sorted.txt -> Displays results (feed input) from file.
-
-
-BASIC-REGULAR-EXPRESSIONS==========================================================
-
 Basic regular expressions (regex) are used to match patterns in text.
-
 "^Apple"      > Match start of the line
 "Applle$"     > Match end of line
 "^Apple$"     > Match start & end of the line
@@ -396,39 +188,11 @@ Basic regular expressions (regex) are used to match patterns in text.
 "Ap+le"       > Match A, follow by one or more p's followed by le
 "Ap?le"       > Match A, follow maybe a p, ollowed by le:
 "Ap[p-z]le"   > Match Ap follow by a letter between p & z, follow by le:
-
 cat file.txt | grep -E "^Apple"
 cat file.txt | grep -E "Apple$" -> EOL
-
-
-ls /folder/ | wc -l >> Nr_files.txt
-
-
-
-
-
-
-
-
-
-
-
-                            4.0 OPERATING SYSTEM                               
-#####OSs/RELEASE MODELS#####
-cat /etc/issue > Check OS version
-uname -r       > Check kernel version
-LTS            > "Long term support"
-
-#####HARDWARE#####
 cat /proc/cpuinfo > CPU info
 free              > Free memory | Swap kicks in when ram is exceeded.
-df -h             > Second/Persistent storage| df -h | grep -v "dev/loop*"
-ifconfig          > See network interfaces [card] AKA [[NIC]] 
-    > Loopback address [lo] > How it communicates with itself
-Headless instalation > Only CLI (no monitor) Solution: SSH remote
 lswh              > List hardware components
-
-#####DATA STORAGE#####
 DATA PROGRAMS & CONFIGURATION (Common syst & config locations)
 SysBooConfig:/Boot [Bootloader config|param & LxKernel|Initial Ram disk]
 PartMountPoints:/etc/fstab [Partit.list to mount auto where they mount on sys]
@@ -438,15 +202,39 @@ Host file: /etc/hosts [List IP add|Hostname we want the sys to associate with]
 AppConf: /etc/<application> [_Application config files [.conf]extension]
 DevData: /sys (DEVICES) [SysInfo on hardware | Virtual FS | Data storage]
 DevFiles: /dev (DEVICES) [_Device files - normally block or character devices]
+	
+=====================================================================================================================================================
 
-PROCESSES & SYSTEM MESSAGING[Kernel messages](Data used by running processes)
-PROCESS DATA      > Process data is stored /proc with individual <PID folders
-KERNEL RING BUFFER:Holds msgs to Kernel Operations | ConstantSize buffer
-ps aux|ps -eF|top > ListProcesses[BSD/LX]format| Util 4view proc+resource use
-dmesg >View specKernel info from ringBuffer & print msg buffer 2 kernel
+																LICENCE
 
-#####LOGGING#####(Common location for system & application collection)
-Sys.logging proctocol: syslog, rsyslogd [Syslog=service perform msg collection]
+				PUBLIC DOMAIN: Universal domain declaration, work has no restrinctions. License excerpt states that others can copy
+				distribute, perform work even for commercial goals without permissions. (Creative Commons 1.0).
+
+				TOO PERMISSIVE(BSD) 4 clauses: [1]Source redistribution retains the above copyright notice. [2] Redistribution in
+				binary form must reproduce the above copyright notice that lists of conditions. [3] All ads.material where mentioned
+				features or software use, must display the acknowledgement /Product. inc.software by x/ [4] No organization name or
+				contributors can be used to endorse or promote products derived from the software without prior permission.
+				
+				COPY-LEFT(GPL): Workcan only be distributed under the same license terms. Forks can be created towards the right lice.
+				which is copied from the left. This license allows commercial modification/distribution, but restricts sub-licensing.
+				
+				OSI(Open-source Initiative): Individuals from both sides work on a free open-source project, free, modified software
+				and open-available source code. 
+
+				FSF(Open Software Foundation): To a software be free, must guarantee 4 freedmons to their users: [1] Run the program
+				as they wish for any purpose. [2] Study how the program works/changes/controls/open-source. [3] Redistribute copies
+				to help others. [4] Redistribute copies of modified version to the community.
+
+				MAIN DIFFERENCES: Philosophy - lack of focus on the practical benefit of the software and more on ethics/rights/
+				FOR CONSIDERATION: Forks license needs examination. Permissive has no restrinctions, Derivative - owner retains
+				copyright of the original work.
+
+=====================================================================================================================================================
+
+ 
+
+
+
 var/log/messages. [General sys log msgs] 
 /var/log/syslog.  [DEBIAN-based system]
 /var/uth          [AuthLog]
@@ -456,23 +244,17 @@ var/log/messages. [General sys log msgs]
 /var/logfail.     [AuthFail]        
 crontab -l List cron jobs - system to schedule tasks, automate tasks
 
-#####NETWORK#####(group of connected devices to com.eachother)##### 
-DNS CLIENT CONFIG: DNS basics and client configuration.
-DNS(DomNameSys:4networkDevices must have address- maps DNS2IP [www.x.com ->IP]
-ip addr show > Display machine IP addresses.
-ping -c 4 www.google.com > Sends 4 pings to Google.com to test connectivity
 
-#####DNS.CONFIG(Find/determine network configuration)#####
+
+=====================================================================================================================================================
+
+																NETWORK							
+
+DNS(DomNameSys:4networkDevices must have address- maps DNS2IP [www.x.com ->IP]
+ping -c 4 www.google.com > Sends 4 pings to Google.com to test connectivity
 /etc/resolv/conf    > Config file to determine which hosts to use DNS queries
 /etc/hosts          > Used to statically mapped IP aadresses to hostnames
 
-
-
-Adress configuration
-ip route show       > Show current routing table
-ip addr show        > Show current address
-ifconfig            > View/change interface configuration
-netstat & ss        > listing services and active connections
 
 Obs: Vmlinuz files = Kernels | initrd.img = Initial RAM disk
      etc/resolv.conf = Specifcy nameserver
@@ -482,18 +264,6 @@ Obs: Vmlinuz files = Kernels | initrd.img = Initial RAM disk
          Crontab = Lists cron jobs - System to schedule tasks [automation]
          Curl = Util to transfer from/to a server
      Switch Vs Router: Switch(tranf.on same network) | Router(outside network)
-         DNS = Domain name service
-
-
-
-
-
---------------------------------------------------------------------------------
-|||||||||||||||                 5.0 SECURITY                     |||||||||||||||
---------------------------------------------------------------------------------
-
-
-BASIC SECURITY(Root & Standard users: Differences between them)
 
 Standard user(Unpriviledge account)
 Std.Accounts are provided a login shell, home dir, limited permissions for view
@@ -502,11 +272,8 @@ system configurations and no permissions for modify sys configurations. They can
 ROOT user(Admin account system)
 Full access to all syst.permissions and used for sys-level-admin. A more secure manner of admin is careful use of sudo priviledges.
 
-/etc/passwd
-Username|Pass|UserID|GroupID|GECOS(longName)|Homedir|LoginShell(loginInterprete)
-
-/etc/shadow
-Username|Pass|Lastchanged|Min|Max|wan|Inactive|Expire
+/etc/passwd:Username|Pass|UserID|GroupID|GECOS(longName)|Homedir|LoginShell(loginInterprete)
+/etc/shadow: Username|Pass|Lastchanged|Min|Max|wan|Inactive|Expire
 
     * Password=hasged password value[encrypted]
     * Lastchanged=Nr days since password change
@@ -521,42 +288,28 @@ Username|Pass|Lastchanged|Min|Max|wan|Inactive|Expire
     * GroupID(GID)= Unique group ID
     * Group List= a comma deliniated list of usernames that belong to the group 
 
-* Password file has moved to /etc/shadow
-
-SYSTEM USERS(User accounts for services and processes)
-
 Application Service accounts
 System users are generally deployed when apps are installed, their home dirs are
 set to application folders and they do not have a login shell. The main purpose
 of having discreet users is to seperate functional priviledges from other apps
 and services.
 
-USERS & GROUP COMMANDS(Commands for manage users and groups)
 
-useradd[options] username > Create new users
-Options are available for specifying UID|GID|HomeDir|Group membership
+=====================================================================================================================================================
+
+															    ADD USER/GROUP					
+
+									useradd (Add user)						groupadd [opt] groupname: Create group
+									passwd username (upd.password)			chow[opt] user[:group] file: Change file owner
+									
+	
+	
+	
+	
+chown cloud_user:cloud_user file1  > Change file user and group ownership
 /etc/skel   >  Boilerplate files/folders for new accounts
-Folder content is automatically copied when new homedir is created via useradd.
-
-passwd username  > Update user password
-passwd util is used to update current user password| others(priviledgesRequired)
-
-groupadd[options] groupname > Create new groups
-The groupadd util is used to add/create groups
 
 USER_IDs(local users are given a unique ID number)
-All local users have an ID stored with corresponding username in /etc/passwd.
-
-    UID 0 = Root account
-    UID 1-99 = System users
-    UID 100+ = Standard users
-    UID 65534 = Nobody user 
-
-Remote_users
-Reserved range of UIDs for nonLocal users|Prevents UID collision with localUsers
-
-
-FILE & DIR PERMISSIONS AND OWNERSHIP
 
  7 = Read|Write|Execute [rwx]
  6 = Read|Write|
@@ -567,258 +320,74 @@ FILE & DIR PERMISSIONS AND OWNERSHIP
  1 = Execute|
  0 = NO PERMISSIONS
 
-FILE Directory Permissions
-Execute=Enter directory | Dirs req. X permission to be entered by user|group|all
-
-CHANGE FILE OWNERSHIP
-chow[options] USER[:GROUP]File(s)  > Changes file ownership
-chown cloud_user file1             > Change file user ownership
-chown :cloud_user file1            > Change a file group ownership
-chown cloud_user:cloud_user file1  > Change file user and group ownership
-
-CHANGE FILE PERMISSIONS
 chmod 777 file1                    > RWX for all
 chmod 774 file1                    > RWX for owner; R for group & all
 chmod +x  file1                    > Add execute to current permissions
 chmod -w  file1                    > Remove write from current permissions
 
-
-SPECIAL DIRECTORIES AND FILES
-
 TEMP FILES/FOLDERS(Create and working with temporary files and folders)
-
-/tmp [Cleared upon system boot]
-All content is cleared upon system boot. Dir used for programs or scripts that
-require temp files or directories.
-
-var/tmp [Cleared every 30 days - depending on the distro]
-All /var/tmp persists through a system boot. This dir is mainly used by programs
-or scripts that require temporary files/directories with more persistence than
-/tmp offers.
 
 mktemp[option][name template] > Create a temp file/dir
 mktemp can be used to create adhoc files/dirs with a random file name portio.
 Those files are not automatically removed.
-
-
-
-SYMBOLIC LINKS
-
-ln -s [target] link name] > Creates symbolic link to target as a file[link name]
-    Example: ln -s /home/cloud_user/file1 /tmp/file2
-
-
-
-
-
-
-
-
-DNS (Domain name system) domain name - Ip
-
-configuration /etc/resolv.conf -> Managed by network manager or Daemon service
-Gives nameserver 127.0.0.53
-
-host www.example.com -> Tell us the address aIPV6 | translate domain name into ipV4/6 address
-
-dig www.example.com -> Gives domain record details[internet record]
-dig @1.1.1.1 www.x.com -> Uses different server to access the info 1.1.1.1=cloudflare dns (troubleshooting own network)
-
-etc/hosts -> maps an ip adddress to localhost
-reference to hostname, edit the file | host www.x.com copy the IP | vim hosts file | add line IP and name it
-
-DNS resolution sequence
-
-DNS Hostnames -> IP
-Reverse DNS ip -> Hostnames 
-Hostnames = easy to remember (www.squarespace.com)
-
-
-QUERY NETWORK CONFIGURATION
-
-ip route show  > Show current routing table alternative: ip r s
-route > Add route table
-
-ip address show > Show current addresses alternative: ip a s
-
-
-ifconfig - View/change interfaces config | subnet | broadcast=final address on the range
-mac address: hardware device fingerprint address
-(marked for deletion)
-
 CMD: nmcli (network manager) - Print devices +info(routing, ip's etc)
-
 
 netstat / ss - List services and active connection (very similar)
 netstat -tlnp [tpc listening numeric showPIDs]
 cat /etc/services | grep [port number]
 
-
-
-NIC: ens38 / 33 / etc
-Network interface controller
+NIC: ens38 / 33 / etc Network interface controller
 Check NETMASK | MAC ADRESS  | SUBNET | broadcast
-Try apache
 
-
-
-
------- ROOT and standard users
-
-su change userID to become super user | su | su [other user name]
-sudo = elevating permissions to root -> etc/sudoers
 visudo = vi + superuser
-sudo su -  -> changes to root account it will have # instead of $ 
 /etc/passwd [7 fields]
-main dif is loginshell(system account does not have)
-
-
-SYSTEM USERS
-
-
-
-CREATING USER AND GROUPS
-
-
-List all users on the system CMD: cat/passwd each line | wc -l =  number of users
-
-sudo useradd dave | useradd dave
-passwd user = cmd to create password
-
 usermod usermod -s /binb/bash dave
-
-sudo mkhomedir_helper dave -> Create home dir for Dave user
 sudo useradd -m dalila -> Create user and home directory
-
-make users as admins
-/etc/group | grep sudo > getting the sudo group
-
-
-
+make users as admins: /etc/group | grep sudo > getting the sudo group
 sudo groupadd homestudy
 sudo usermod -a -G homestudy Dave > Put myself into group -a(append) -G(Group) group dave
 restart profile: . /etc/profile | 
 access sudoers file add %groupname ALL=(ALL:ALL) ALL || save file
-
-
-
-USER IDs
 nobody user = sudo user representing user with the least of permissions.
-
-
-
-FILE/DIR PERM & OWNER
-
-USER GROUP ALL
 change group: chown :castudy test.txt
 group change: chmod 664 test file = rw rw r | chmod g+rw test file (group read write permissions)
-
 chown new_owner file.txt > Change ownership
 chown :groupname file.txt > Change file group ownership
 chown username:groupname file.txt > Change file user/group ownership
 Recursive - change permission on a dir: chown -R newuser 
 chmod +x file = make it executable
-
-
-
-SPECIAL FILES AND DIRS
-
-/var/temp => persists after system boot (Cleared after 30 days)
-/temp => Cleared after system boot
-
 mktemp = /auto.generated_url
 
+ock Bill's, Susan's, and Juan’s Accounts
+for i in bill susan juan; do sudo passwd -l $i; done
 
-SYMBOLIC LINKS
+Remove Bill as a User and Transfer Ownership of his Home Directory
+Remove the user bill.: sudo userdel bill
+Change the ownership of Bill's home directory (recursively) to the user nancy and the group jason.: sudo chown -R nancy:jason /home/bill
+Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/bill
 
+Remove Susan as a User and Transfer Ownership of her Home Directory: Remove the user susan.:sudo userdel susan
+Change the ownership of Susan's home directory (recursively) to the user greg and the group jason.: sudo chown -R greg:jason /home/susan
+Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/susan
 
-Symbolic link -> link to file/folder
-ln -s [target dir] symbolic_link_name
+Remove Juan as a User and Transfer Ownership of His Home Directory
+Remove the user juan: sudo userdel juan
+Change the ownership of Juan's home directory (recursively) to the user jeremy and the group sally: sudo chown -R jeremy:sally /home/juan
+Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/juan
 
+Check what groups the user belongs to: id <username> | groups <username> | cat /etc/groups | grep <username>
+Check user home directory and shell: getent passwd <username> | cat /etc/passwd | grep <username>
+Create multiple users: for i in jen william matt sam anne danny kate bruce; do sudo useradd -m $i; done
+mktemp - create temp file or directory: eg. temp_file=$(mktemp)
+Create a temporary file from a recursive directory listing of the archive folder.
+tmp_file=$(mktemp)
+ls -R sosreport-ip-10-0-1-11-2019-03-22-wxoxhnk/ >> $tmp_file
 
+=====================================================================================================================================================
 
+															    SHELL SCRIPT
 
-
-HOW TO PREPARE FOR THE EXAM
-
-Practice the hands on lab - cover 80% of the content 
-Review Flash card - hard version of a question exam
-Take practice exam - Must ask dif.questions but same level of dificulty. Dont take questions
-Get plenty of Rest!!! Go to bed early
-Pay attention to the answer choices - some are filling blanks | eliminate the obvious choices
-Mark answers to review - don't spend a lot of time to manage time
-Be calm and confident - do not panic (take a few breaths)
-
-WHAT NEXT EXAM
-LPIC-1 System administrator > Certifications
-obj1 | obj2 -> more in depth regarding the lx essentials > more suitable for uncertainity on the future distro use
-RHCA - Read hat certified system admin (ex200) > RHCE Read hat certified engineer prep course
-
-KEEP WITH LX DATE
-Cloud guru this month < Resource for personal and professional use. 
-
-
-
-
-# BASIC SHELL SCRIPTING
-
-	#!/bin/bash: Defines interpreted to be used by the shell script
-	#Comments
-
-BASIC SCRIPT
-	#!/bin/bash
-	echo "Enter age:"
-	read age
-	echo -e "Your age is $age\n"
-the -e is to interpret the \n at the eol
-
-sh = shell script
-
-chmod  +x script.sh   = x for 3 (o/g/all)
-
-
-Without the ./ we need to modify path:
-	PATH=$PATH:$HOME/bin | echo $PATH
-
-
-
-Check DO WHILE
-
-IF Statements
-	#!/bin/bash
-	if [<some test>]
-  then
-	<command>
-	fi
-
-For Loops
-	#!/bin/bash
-	for i in 1 2 3; 
-		do echo $i
-	done
-
-COMMON TEXT EDITORS
-VIM
-gg  > Go to 1st line of file
-G   > Go to last line of file
-10G > Go to 10th line of file
-I   > Insert at start of line
-o   > Append line under the cursor
-
-NANO
-ctrl+X >[EDITING]Exit+Save prompt
-ctrl+o >[SAVING]]Exit+Save prompt
-
-
-
-
-
-
-IF statements
-
-![expression] >Expression is false
--n[string] >String lenght >+ 0
--z[string] >String lenght =0
+do while,  loops, variables, if statements
 
 string1=string2
 string1 !string2 >1 not equal to 2
@@ -834,95 +403,59 @@ int1-lt int2 > int1 lower t int2
 -w [file] >Exist+write.perm(ok)
 -x [file] >Exist+execute.perm(ok)
 
+=====================================================================================================================================================
 
+																OBSERVATIONS
 
-
-TEXT EDITORS
-
-
-VI 
-first line = gg
-bottom line = G
-specifc line = 10g
-/set number = line number displays
-
-VIMTUTOR > vim + tab = UTIL
-
-
-NANO
-crtl+_ = specific line
-
-
-
-TO DO = use GIT to grab the file and open with sublime
+					Routers: Foward packages between the network			Netfilter: Kernel framewolrk to track dif.connections
+					High level: Components									Low level: Supports hardware functions
+					Sys-calls are made to Kernel-incorporated				Systemd: System/service manager for Linux OS
+					Absolute paths: Start with "/"							Relative paths: unique file/direction location
+					Loopback address: How it communicates itself			Hedless install: Only CLI (SSH remote) / No monitor
+					Hardware to file hierarchy by /dev and /sys
 
 
 
 
- hahahahah! Cool
 
-List all users: getent passwd
-List all groups: getent group
+for i in {1..1000}; do touch file_$i; done
 
-Check what groups the user belongs to: id <username> | groups <username> | cat /etc/groups | grep <username>
-Check user home directory and shell: getent passwd <username> | cat /etc/passwd | grep <username>
+ Input(STDIN[0]) command is send to the interpreted to be parsed/executed which 
+ can be redirected or moved to the STOUT[1]/STERR[2]. We can leverage 2 types
+ of output[example: redirect SDTOUD to a file while watching error msgs].'
+ An exit status states that the cmd was successful or not, but will not display on the stdout. 
 
-Create multiple users: for i in jen william matt sam anne danny kate bruce; do sudo useradd -m $i; done
+PROCESSES & SYSTEM MESSAGING[Kernel messages](Data used by running processes)
+PROCESS DATA      > Process data is stored /proc with individual <PID folders
+KERNEL RING BUFFER:Holds msgs to Kernel Operations | ConstantSize buffer
+Sys.logging proctocol: syslog, rsyslogd [Syslog=service perform msg collection]
 
-wget = download files
+    UID 0 = Root account
+    UID 1-99 = System users
+    UID 100+ = Standard users
+    UID 65534 = Nobody user 
+	
+	mac address: hardware device fingerprint address
+	**OpenSrc&Licensing:**Licenses=rules/guidelines on how the work will be used by others
+allowing others to contribute withing seeking permission initially. **Top 3 licenses:**
 
-mktemp - create temp file or directory: eg. temp_file=$(mktemp)
 
+ ****FSF considers that software that doesn't meet all criteria as non-free/unethical.''
+FSF:Free software foundation    > FLOSS: [Monitization-restrinctions]FOSS:  [OpenSrc-Free ]
 
-Create a temporary file from a recursive directory listing of the archive folder.
-tmp_file=$(mktemp)
-ls -R sosreport-ip-10-0-1-11-2019-03-22-wxoxhnk/ >> $tmp_file
+When addressing LX desktop environments, it can be break to 2 broad categories. 
+ We have the lightweight desktop for limited resources-old-systems
+ (**LXDE, Mate and XFCE**). On the other end of the spectrum, **Unity**(heavy resource)
+
+ **>** Unity is Ubuntu implementation of Gnome (difference > Launcher). 
+ > Cinnamon is an older version of Gnome with menus at the top.
+ > KDE similar to windows 7/XP with a start menu'
+Depending on the distro, we can change after the installation, users can edit 
+ files/folders of other users. Encryption is an option, but root can access it!'
+On Windows, we need to emulate terminal(Putty). To connect user by SHH we need:'
+Remote content copy(SCP) | No password(Shared keys) | Recurring/auto processes
 
 Add ~/bin to the $PATH environment variable.
 echo 'PATH=$HOME/bin:$PATH' >> .bashrc
 
-
-
 .bashrc: Bash shell script that that runs. You can put commadns to setup the shell to use in your particular env. 
-
-
-
-Lock Bill's, Susan's, and Juan’s Accounts
-Run the following command:
-for i in bill susan juan; do sudo passwd -l $i; done
-
-
-Create Accounts for Nancy, Greg, and Jeremy
-Run the following commands:
-sudo useradd -m nancy
-sudo useradd -m greg
-sudo useradd -m jeremy
-
-
-
-Remove Bill as a User and Transfer Ownership of his Home Directory
-Remove the user bill.
-sudo userdel bill
-Change the ownership of Bill's home directory (recursively) to the user nancy and the group jason.
-sudo chown -R nancy:jason /home/bill
-Change the mode of the directory to grant read and execute permissions to the group.
-sudo chmod g+rx /home/bill
-
-
-Remove Susan as a User and Transfer Ownership of her Home Directory
-Remove the user susan.
-sudo userdel susan
-Change the ownership of Susan's home directory (recursively) to the user greg and the group jason.
-sudo chown -R greg:jason /home/susan
-Change the mode of the directory to grant read and execute permissions to the group.
-sudo chmod g+rx /home/susan
-
-
-
-Remove Juan as a User and Transfer Ownership of His Home Directory
-Remove the user juan.
-sudo userdel juan
-Change the ownership of Juan's home directory (recursively) to the user jeremy and the group sally.
-sudo chown -R jeremy:sally /home/juan
-Change the mode of the directory to grant read and execute permissions to the group.
-sudo chmod g+rx /home/juan
