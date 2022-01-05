@@ -1,7 +1,6 @@
 =====================================================================================================================================================
 									DISTROS
-					Collection of components that form a system distro with different layers.
-							
+					Collection of components that form a system distro with different layers.	
 	1) Graphical: Interface (Desktop environment, common on Linux desktops (Gnome, KDE, Unity). Allows to navigate the OS with the device hardware.
 	2) X-Server: Enables GUI(Graphical user interface), the display server for X windows systems framework for GUI environments.
 	3) GNU Core: Basic utils such as [shell] [text editor] [change file permissions][etc].
@@ -68,50 +67,44 @@
 
 =====================================================================================================================================================
 								     COMMANDS
-	1. lsb_release -a (Check distro info)						1. w (Current logged user and history of other users login)
-	2. ls --version (Check foundation utils -alt)					2. env (all vars) printenv (vars+values)
-	3. cat /proc/version | cat/etc/issue (distro info - alt)			3. ls -alsh (List all size human)	
-	4. uname -r | cat /proc/version (Kernel version)				4. ls -lh				 
-	5. x -version (Checks X server version)						5. ls -A (List all files, including hidden)
+1. lsb_release -a (Check distro info)		     	1. w (Current logged user & login hist)	   		1. mdkir | mkdir -p (parent)
+2. ls --version (Check foundation utils -alt)	     	2. env (all vars) printenv (vars+values)	  	2. cp -r [][] (copy directo
+3. cat /proc/version | cat/etc/issue (distro info).  	3. ls -alsh (List all size human)		   	3. mv [][] (move directory)
+4. uname -r | cat /proc/version (Kernel version).    	4. ls -lh				 	   	4. rm -r (delete directory recursively)	
+5. x -version (Checks X server version)		     	5. ls -A (List all files, including hidden)   		5. df -h (check disk usage)	
 
-	1. mdkir | mkdir -p (parent)							1. ln -s (create symbolic link)
-	2. cp -r [][] (copy directory)							2. x=$(ls) (Execute command on variable)
-	3. mv [][] (move directory)							3. $HOME (Displays current home directory)
-	4. rm -r (delete directory recursively)						4. $PS1 (Display primary prompt string)
-	5. df -h (check disk usage)							5. $PATH (Path where shell looks for commands)
-	
-	1. ip addr show (Current address)						1. route (Add route table)
-	2. ip route show (Current route table)						2. wget (Download files)
-	3. ifconfig (View & change interface config)					3. getent passwd (List all users)
-	4. netstat | ss (services and active connections)				4. getent group (list all groups)
-	5. dig www.x.com (Gives domain details +records)				5. useradd user (add user)
-	
-	1. host www.example.com (IPv6, translate DNS into IPV4/6)			1. ps aux (Process list | Resource use)
-	2. groupadd [opt] (create group)						2. dmesg (View specifc kernel info from ring buffer)
-	3. chow [opt] user[:group] file (Change file owner)				3. free (Free memory- SWAP=RAM exceeded)
-	4. chow user:user [file]: Change file and group owner				4. lswh (List hardware components)
-	5. passwd username (upd.password						5. Lynx | 3wm | Links2 | Elinks (Terminal browser)
+1. ln -s (create symbolic link)			     	1. ip addr show (Current address)		   	1. route (Add route table)
+2. x=$(ls) (Execute command on variable)	     	2. ip route show (Current route table)			2. wget (Download files)
+3. $HOME (Displays current home directory)	     	3. ifconfig (View & change interface config)		3. getent passwd (List all users)
+4. $PS1 (Display primary prompt string)		     	4. netstat | ss (services and active connections)  	4. getent group (list all groups)
+5. $PATH (Path where shell looks for commands)	     	5. dig www.x.com (Gives domain details +records)  	5. useradd user (add user)
 
-	1. ping -c 2 www.x.com (Sends 2 pings to test connectivity)			1. mktemp [opt] [template] (Create temp file/dir)
-	2. Mapper (translate block devices to something else)				2. mktemp (Can be used to create adhoc files/dirs)
-	3. Crontab (Lists cron jobs, System scheduled tasks)				3. grep (Search for given input on files)
-	4. curl (Util to transfer from/to a server)					4. chmod 777 file1 (Give RWX permissions to all)
-	5. nmcli (Network manager - Print devices + info)				5. netstat -tlnp (tpc listening numeric showPIDs)
+1. host www.example.com (IPv6, translate DNS))		1. ps aux (Process list | Resource use)			1. ping -c 2 www.x.com (Sends 2 pings)
+2. groupadd [opt] (create group)			2. dmesg (View kernel info from ring buffer)	        2. Mapper (translate block devs)
+3. chow [opt] user[:group] file (Change file owner)	3. free (Free memory- SWAP=RAM exceeded)		3. Crontab (Lists cron jobs)
+4. chow user:user [file]: Change file and group owner	4. lswh (List hardware components)			4. curl (Util to transfer from/to a server)	
+5. passwd username (upd.password			5. Lynx | 3wm | Links2 | Elinks (browser)		5. nmcli (Network manager, Print devices + info)
 
-	1. tar --delte --file=x.tar file.txt (DelFile)					1. tar -c(Create) -x(Xtract) -r(Append) -t(List) -f(R/W)
-	2. GZIP: Def.compression used by tar(balanced)					2. BZIP2: Alt (Slower but higher compression)
-	3. ZIP: All-in-one compress/archive util					3. gzip -9 (Compress with max compression level)
-	4. tar cvf backup.tar *tar (create tar file)					4. tarx xzf x.tar.gz y (Decompress file)
-	5. tar czf backup.tar.gz *.txt  (GZIP)						5. tar cjf backup.tar.bz2 *.txt (BZ2)
-	6. zip -r backup.zip *.txt      (ZIP)
+1. mktemp [opt] [template] (Create temp file/dir)	1. tar --delte --file=x.tar file.txt (DelFile		1. tar -c(new) -x -r(Append) -t(List) -f(R/W
+2. mktemp (Can be used to create adhoc files/dirs)	2. GZIP: Def.compression used by tar(balanced)		2. BZIP2: Alt (Slower but higher compression)
+3. grep (Search for given input on files)		3. ZIP: All-in-one compress/archive util		3. gzip -9 (Compress with max compression level)
+4. chmod 777 file1 (Give RWX permissions to all)	4. tar cvf backup.tar *tar (create tar file)		4. tarx xzf x.tar.gz y (Decompress file)
+5. netstat -tlnp (tpc listening numeric showPIDs)	5. tar czf backup.tar.gz *.txt  (GZIP)			5. tar cjf backup.tar.bz2 *.txt (BZ2)
 
-	1. ? : Match any single character.						1. Escape char: x=Dave\ Oliveira  > Dave Oliveira									
-	2. * : Match any number of characters.						2. Single quot: x='Dave $surname' > Dave $surname		
-	3. []: Match character from range.						3. Double quot  x="Dave"$surname" > Dave Oliveira			
-	4. ^ : Used to match starting character.					4. Escape char: x=Dave\ Oliveira  > Dave Oliveira
-	5. $ : Used to match ending character.						5. Single quot: x='Dave $surname' > Dave $surname
-	6. {}: Match more than one pattern.						6. Double quot: x="Dave"$surname" > Dave Oliveira
-	7. | : Apply more than one condition.						7. 
+1. ? : Match any single character.			1. Escape char: x=Dave\ Oliveira  > Dave Oliveira									
+2. * : Match any number of characters.			2. Single quot: x='Dave $surname' > Dave $surname		
+3. []: Match character from range.			3. Double quot  x="Dave"$surname" > Dave Oliveira			
+4. ^ : Used to match starting character.		4. Escape char: x=Dave\ Oliveira  > Dave Oliveira
+5. $ : Used to match ending character.			5. Single quot: x='Dave $surname' > Dave $surname
+6. {}: Match more than one pattern.			6. Double quot: x="Dave"$surname" > Dave Oliveira
+7. | : Apply more than one condition.			7. 
+
+1. for i in {1..100}; do touch file_$1; done (create 100 files)		1. useradd username (Add user)
+2. for i in X Y; do sudo useradd -n $i; done (create mult.users)	2. userdel username (delete user)							
+3. for i in x y z; do sudo passwd -l $i; done (Lock user account)	3. chown :group 1.txt (Change file group ownership)
+4. PATH=$PATH:$HOME/temp-dir (append directory to the $PATH var)	4. chown username:group 1.txt (Change ownership)
+5. echo PATH="$PATH:$HOME/temp-dir"' >> ~/.profile (persistent)		5. chmod g+rx /home/user (Change dir mode to rx group)
+6. id username | group username | cat /etc/groups | grep username	6. getent passwd username | cat /etc/passwd | grep username	
 
 =====================================================================================================================================================
 								LICENCE
@@ -151,43 +144,7 @@
   		Permissions - 1(Execute) 2(Write) 4(Read)			Lmlinuz files (Kernels)
 		LXDE|Mate|XFCE (lightweight desktops)				Unity (Heavy weight desktops)	
 		
-		/etc/passwd:
-			Username|Pass|UserID|GroupID|GECOS(longName)|Homedir|LoginShell(loginInterprete)
-		/etc/shadow: Username|Pass|Lastchanged|Min|Max|wan|Inactive|Expire
-			Password=#password value[encrypted]	    Lastchanged=Nr days since password change
-			Min/Max=Nr days between password changes    Warn= Nr days before pass expiration to warn user
-			Inactive=Nr days since expiration	    Expire=Absolute expiration date
-
-=====================================================================================================================================================
-								LABS
-
-	1. for i in {1..100}; do touch file_$1; done (create 100 files)		1. useradd username (Add user)
-	2. for i in X Y; do sudo useradd -n $i; done (create mult.users)	2. userdel username (delete user)							
-	3. for i in x y z; do sudo passwd -l $i; done (Lock user account)	3.
-	4. PATH=$PATH:$HOME/temp-dir (append directory to the $PATH var)	4.
-	5. echo PATH="$PATH:$HOME/temp-dir"' >> ~/.profile (persistent)		5.
-								
-								
-ADD/MODIFY USER: useradd -m dave (user+homedir) | usermod -s /bin/b bash dave
-
-make users as admins: /etc/group | grep sudo > getting the sudo group
-usermod -a -G homestudy Dave > Put myself into group -a(append) -G(Group) group dave
-access sudoers file add %groupname ALL=(ALL:ALL) ALL || save file
-change group: chown :castudy test.txt
-group change: chmod 664 test file = rw rw r | chmod g+rw test file (group read write permissions)
-chown new_owner file.txt > Change ownership
-chown :groupname file.txt > Change file group ownership
-chown username:groupname file.txt > Change file user/group ownership
-Recursive - change permission on a dir: chown -R newuser 
-
-Remove Bill as a User and Transfer Ownership of his Home Directory
-Change the ownership of Bill's home directory (recursively) to the user nancy and the group jason.: sudo chown -R nancy:jason /home/bill
-Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/bill
-
-Remove Roy as user and transf.ownership to their home dir go greg: sudo userdel roy | show -R greg:roy /home/roy
-
-Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/susan
-Change the ownership of Juan's home directory (recursively) to the user jeremy and the group sally: sudo chown -R jeremy:sally /home/juan
-Change the mode of the directory to grant read and execute permissions to the group.: sudo chmod g+rx /home/juan
-- Check which groups user is in: id username | group username | cat /etc/groups | grep username
-- Check user home directory & shell: getent passwd username | cat /etc/passwd | grep username
+	/etc/passwd: Username|Pass|UserID|GroupID|GECOS(longName)|Homedir|LoginShell(loginInterprete)
+	/etc/shadow: Username|Pass|Lastchanged|Min|Max|wan|Inactive|Expire
+	Password=#password value[encrypted] | Lastchanged=Nr days since password change Min/Max=Nr days between password changes    
+	Warn= Nr days before pass expiration to warn user | Inactive=Nr days since expiration |Expire=Absolute expiration date
