@@ -1,7 +1,7 @@
 =====================================================================================================================================================
 
-																DISTROS
-							Collection of components that form a system distro with different layers.
+									DISTROS
+				Collection of components that form a system distro with different layers.
 							
 	1) Graphical: Interface (Desktop environment, common on Linux desktops (Gnome, KDE, Unity). Allows to navigate the OS with the device hardware.
 
