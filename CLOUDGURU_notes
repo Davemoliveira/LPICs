@@ -4,13 +4,9 @@
 				Collection of components that form a system distro with different layers.
 							
 	1) Graphical: Interface (Desktop environment, common on Linux desktops (Gnome, KDE, Unity). Allows to navigate the OS with the device hardware.
-
 	2) X-Server: Enables GUI(Graphical user interface), the display server for X windows systems framework for GUI environments.
-
 	3) GNU Core: Basic utils such as [shell] [text editor] [change file permissions][etc].
-
 	4) Linux Kernel: Free open-source OS kernel-framework that connects applications layer to the hardware and respective drivers.
-
 	5) Hardware: Physical devices with compute resources and ability to process and save data for short or long terms. 
 
 					RHEL         GNOME | Init.soft: systemd | Release model: Fixed  | Package: RPM
@@ -24,59 +20,70 @@
 
 								  MAIN DIRECTORIES
 								
-						/           > Root directory
-						/bin        > User binaries (commands that can be run by users)
-						/boot       > Static boot files
-						/dev        > device files (block/terminal devices/etc - most pseudo devices)
-						/etc        > Configuration files from service and apps
-						/home       > User home directory
-						/lib        > Libraries (shared)
-						/mnt        > Mount(temp mount)
-						/opt        > Optinal packages
-						/proc       > Kernel and file processes
-						/root       > Root home directory
-						/run        > Application state files
-						/sbin       > sys.admin binaries (used by root)
-						/srv        > Service data
-						/tmp        > Temp files (purged after reboot / var/temp(purged after 30 days)
-						/usr        > User binaries
-						/var        > Variable data files
+					/           > Root directory
+					/bin        > User binaries (commands that can be run by users)
+					/boot       > Static boot files | Bootloader config & parameters & Linux Kernel | Initial RAM disk
+					/dev        > device files (block/terminal devices/etc - most pseudo devices)
+					/etc        > Configuration files from service and apps
+					  |-> /etc/fstab (Partition list to auto mount on the system)
+					  |-> /etc/passwd (List of local users & attributes)
+					  |-> /etc/group  (List of local users & attributes]
+					  |-> /etc/hosts  (List IP address/Hostname we want the system to be associated with)
+					  |-> /etc/<app>  (Application configuration files - Extension .conf)
+					/home       > User home directory
+					/lib        > Libraries (shared)
+					/mnt        > Mount(temp mount)
+					/opt        > Optinal packages
+					/proc       > Kernel and file processes
+					/root       > Root home directory
+					/run        > Application state files
+					/sbin       > sys.admin binaries (used by root)
+					/srv        > Service data
+					/tmp        > Temp files (purged after reboot / var/temp(purged after 30 days)
+					/usr        > User binaries
+					/var        > Variable data files
+					  |-> /var/log/messages (General system log messages)
+					  |-> /var/log/syslog  (General system log messages- DEBIAN)
+					  |-> /var/secure.     (General system log messages- RHE)
+					  |-> /var/boot.log    (System Boot logs)
+					  |-> /var/cron.log.   (Cron logs)
+					  |-> /var/logfail.    (Authentication fails)
+					/sys         > System devices(info) | Virtual file system & Data storage
 
 =====================================================================================================================================================
 
-														CLOUD/APPLICATIONS
+								CLOUD/APPLICATIONS
 								
-							CLOUD: REGIONS > AVAILABILITY ZONES > SUBNETS > COMPUTER INSTANCES
-							SERVER-APPS: Apache & NGINX
-							DB SERVER APPS: MYSQL & MARIADB
-							FILESHARING APPS: Samba(allows native connection for LANs) & NFS(+local)
-							PRIVATE CLOUD APPS: Owncloud & Nextcloud(forked=+enterprise.support)
+					CLOUD: REGIONS > AVAILABILITY ZONES > SUBNETS > COMPUTER INSTANCES
+					SERVER-APPS: Apache & NGINX
+					DB SERVER APPS: MYSQL & MARIADB
+					FILESHARING APPS: Samba(allows native connection for LANs) & NFS(+local)
+					PRIVATE CLOUD APPS: Owncloud & Nextcloud(forked=+enterprise.support)
 
 =====================================================================================================================================================
 
-														PACKAGE MANAGEMENT
+								PACKAGE MANAGEMENT
 
-							DPKG: Debian archive format that includes metadata(.deb)
-							APT: Debian auto install and dependencies (apt-get)
-					
-							RPM: Auto install package (source code)
-							YUM: Supports automatic updates and dependencies. DNF is replacing YUM.
+					DPKG: Debian archive format that includes metadata(.deb)
+					APT: Debian auto install and dependencies (apt-get)	
+					RPM: Auto install package (source code)
+					YUM: Supports automatic updates and dependencies. DNF is replacing YUM.
 
 =====================================================================================================================================================
 
-																COMMANDS
+								     COMMANDS
 
-	1. lsb_release -a (Check distro info)									1. w (Current logged user and history of other users login)
-	2. ls --version (Check foundation utils -alt)							2. env (all vars) printenv (vars+values)
-	3. cat /proc/version | cat/etc/issue (distro info - alt)				3. ls -alsh (List all size human)	
-	4. uname -r | cat /proc/version (Kernel version)						4. ls -lh				 
-	5. x -version (Checks X server version)									5. ls -A (List all files, including hidden)
+	1. lsb_release -a (Check distro info)						1. w (Current logged user and history of other users login)
+	2. ls --version (Check foundation utils -alt)					2. env (all vars) printenv (vars+values)
+	3. cat /proc/version | cat/etc/issue (distro info - alt)			3. ls -alsh (List all size human)	
+	4. uname -r | cat /proc/version (Kernel version)				4. ls -lh				 
+	5. x -version (Checks X server version)						5. ls -A (List all files, including hidden)
 
-	1. mdkir | mkdir -p (parent)											1. ln -s (create symbolic link)
-	2. cp -r [][] (copy directory)											2. x=$(ls) (Execute command on variable)
-	3. mv [][] (move directory)												3. $HOME (Displays current home directory)
-	4. rm -r (delete directory recursively)									4. $PS1 (Display primary prompt string)
-	5. df -h (check disk usage)												5. $PATH (Path where shell looks for commands)
+	1. mdkir | mkdir -p (parent)							1. ln -s (create symbolic link)
+	2. cp -r [][] (copy directory)							2. x=$(ls) (Execute command on variable)
+	3. mv [][] (move directory)							3. $HOME (Displays current home directory)
+	4. rm -r (delete directory recursively)						4. $PS1 (Display primary prompt string)
+	5. df -h (check disk usage)							5. $PATH (Path where shell looks for commands)
 	
 	1. ip addr show (Current address)
 	2. ip route show (Current route table)
@@ -126,15 +133,15 @@ dmesg >View specKernel info from ringBuffer & print msg buffer 2 kernel
 
 =====================================================================================================================================================
 
-																GLOBBING
+									GLOBBING
 
-												? : Match any single character.										
-												* : Match any number of characters.			
-												[]: Match character from range.				
-												^ : Used to match starting character.
-												$ : Used to match ending character.
-												{}: Used to match more than one pattern.
-												| : Used to apply more than one condition.
+							? : Match any single character.										
+							* : Match any number of characters.			
+							[]: Match character from range.				
+							^ : Used to match starting character.
+							$ : Used to match ending character.
+							{}: Used to match more than one pattern.
+							| : Used to apply more than one condition.
 
 =====================================================================================================================================================
 
@@ -148,9 +155,6 @@ tar --delete --file=archive.tar 3.txt -> Delete 3.txt from inside the tarball.
 GZIP: Default compression used by tar (-z) > balance/speed/compression
 BZIP2: Alternative > Slower than Gzip but higher compression
 ZIP: All-in-one compress/archive util with other OS.
-
-
-
 
 
 tar cvf backup.tar *.tar.    > Create Normal Tar file
@@ -188,57 +192,36 @@ cat file.txt | grep -E "Apple$" -> EOL
 cat /proc/cpuinfo > CPU info
 free              > Free memory | Swap kicks in when ram is exceeded.
 lswh              > List hardware components
-DATA PROGRAMS & CONFIGURATION (Common syst & config locations)
-SysBooConfig:/Boot [Bootloader config|param & LxKernel|Initial Ram disk]
-PartMountPoints:/etc/fstab [Partit.list to mount auto where they mount on sys]
-User attributes: /etc/passwd [List of local users & attributes]
-Groups: /etc/group [List of local users & attributes]
-Host file: /etc/hosts [List IP add|Hostname we want the sys to associate with]
-AppConf: /etc/<application> [_Application config files [.conf]extension]
-DevData: /sys (DEVICES) [SysInfo on hardware | Virtual FS | Data storage]
-DevFiles: /dev (DEVICES) [_Device files - normally block or character devices]
 	
 =====================================================================================================================================================
 
-																LICENCE
+								LICENCE
 
-				PUBLIC DOMAIN: Universal domain declaration, work has no restrinctions. License excerpt states that others can copy
-				distribute, perform work even for commercial goals without permissions. (Creative Commons 1.0).
+		PUBLIC DOMAIN: Universal domain declaration, work has no restrinctions. License excerpt states that others can copy
+		distribute, perform work even for commercial goals without permissions. (Creative Commons 1.0).
 
-				TOO PERMISSIVE(BSD) 4 clauses: [1]Source redistribution retains the above copyright notice. [2] Redistribution in
-				binary form must reproduce the above copyright notice that lists of conditions. [3] All ads.material where mentioned
-				features or software use, must display the acknowledgement /Product. inc.software by x/ [4] No organization name or
-				contributors can be used to endorse or promote products derived from the software without prior permission.
+		TOO PERMISSIVE(BSD) 4 clauses: [1]Source redistribution retains the above copyright notice. [2] Redistribution in
+		binary form must reproduce the above copyright notice that lists of conditions. [3] All ads.material where mentioned
+		features or software use, must display the acknowledgement /Product. inc.software by x/ [4] No organization name or
+		contributors can be used to endorse or promote products derived from the software without prior permission.
 				
-				COPY-LEFT(GPL): Workcan only be distributed under the same license terms. Forks can be created towards the right lice.
-				which is copied from the left. This license allows commercial modification/distribution, but restricts sub-licensing.
+		COPY-LEFT(GPL): Workcan only be distributed under the same license terms. Forks can be created towards the right lice.
+		which is copied from the left. This license allows commercial modification/distribution, but restricts sub-licensing.
 				
-				OSI(Open-source Initiative): Individuals from both sides work on a free open-source project, free, modified software
-				and open-available source code. 
+		OSI(Open-source Initiative): Individuals from both sides work on a free open-source project, free, modified software
+		and open-available source code. 
 
-				FSF(Open Software Foundation): To a software be free, must guarantee 4 freedmons to their users: [1] Run the program
-				as they wish for any purpose. [2] Study how the program works/changes/controls/open-source. [3] Redistribute copies
-				to help others. [4] Redistribute copies of modified version to the community.
+		FSF(Open Software Foundation): To a software be free, must guarantee 4 freedmons to their users: [1] Run the program
+		as they wish for any purpose. [2] Study how the program works/changes/controls/open-source. [3] Redistribute copies
+		to help others. [4] Redistribute copies of modified version to the community.
 
-				MAIN DIFFERENCES: Philosophy - lack of focus on the practical benefit of the software and more on ethics/rights/
-				FOR CONSIDERATION: Forks license needs examination. Permissive has no restrinctions, Derivative - owner retains
-				copyright of the original work.
+		MAIN DIFFERENCES: Philosophy - lack of focus on the practical benefit of the software and more on ethics/rights/
+		FOR CONSIDERATION: Forks license needs examination. Permissive has no restrinctions, Derivative - owner retains
+		copyright of the original work.
 
 =====================================================================================================================================================
 
- 
-
-
-
-var/log/messages. [General sys log msgs] 
-/var/log/syslog.  [DEBIAN-based system]
-/var/uth          [AuthLog]
-/var/secure.      [RHE]
-/var/boot.log     [SysBootlog] 
-/var/cron.log.    [Cronlog] 
-/var/logfail.     [AuthFail]        
-crontab -l List cron jobs - system to schedule tasks, automate tasks
-
+    
 
 
 =====================================================================================================================================================
@@ -292,17 +275,15 @@ and services.
 
 =====================================================================================================================================================
 
-															    ADD USER/GROUP					
+								ADD USER/GROUP					
 
-									useradd (Add user)						groupadd [opt] groupname: Create group
-									passwd username (upd.password)			chow[opt] user[:group] file: Change file owner
-									
+			useradd user: (Add user)	
+			groupadd [opt] groupname: Create group
+			chow[opt] user[:group] file: Change file owner						passwd username (upd.password)			
+			chow user:user [file]: Change file and group owner						
 	
 	
-	
-	
-chown cloud_user:cloud_user file1  > Change file user and group ownership
-/etc/skel   >  Boilerplate files/folders for new accounts
+	/etc/skel   >  Boilerplate files/folders for new accounts
 
 USER_IDs(local users are given a unique ID number)
 
@@ -313,7 +294,6 @@ USER_IDs(local users are given a unique ID number)
  3 = Write|Execute
  2 = Write|
  1 = Execute|
- 0 = NO PERMISSIONS
 
 chmod 777 file1                    > RWX for all
 chmod 774 file1                    > RWX for owner; R for group & all
@@ -380,7 +360,7 @@ ls -R sosreport-ip-10-0-1-11-2019-03-22-wxoxhnk/ >> $tmp_file
 
 =====================================================================================================================================================
 
-															    SHELL SCRIPT
+								SHELL SCRIPT
 
 do while,  loops, variables, if statements
 
@@ -400,17 +380,14 @@ int1-lt int2 > int1 lower t int2
 
 =====================================================================================================================================================
 
-																OBSERVATIONS
+								OBSERVATIONS
 
-					Routers: Foward packages between the network			Netfilter: Kernel framewolrk to track dif.connections
-					High level: Components									Low level: Supports hardware functions
-					Sys-calls are made to Kernel-incorporated				Systemd: System/service manager for Linux OS
-					Absolute paths: Start with "/"							Relative paths: unique file/direction location
-					Loopback address: How it communicates itself			Hedless install: Only CLI (SSH remote) / No monitor
-					Hardware to file hierarchy by /dev and /sys
-
-
-
+		Routers: Foward packages between the network			Netfilter: Kernel framewolrk to track dif.connections
+		High level: Components									Low level: Supports hardware functions
+		Sys-calls are made to Kernel-incorporated				Systemd: System/service manager for Linux OS
+		Absolute paths: Start with "/"							Relative paths: unique file/direction location
+		Loopback address: How it communicates itself			Hedless install: Only CLI (SSH remote) / No monitor
+		Hardware to file hierarchy by /dev and /sys
 
 
 for i in {1..1000}; do touch file_$i; done
@@ -433,11 +410,6 @@ Sys.logging proctocol: syslog, rsyslogd [Syslog=service perform msg collection]
 	mac address: hardware device fingerprint address
 	**OpenSrc&Licensing:**Licenses=rules/guidelines on how the work will be used by others
 allowing others to contribute withing seeking permission initially. **Top 3 licenses:**
-
-
- ****FSF considers that software that doesn't meet all criteria as non-free/unethical.''
-FSF:Free software foundation    > FLOSS: [Monitization-restrinctions]FOSS:  [OpenSrc-Free ]
-
 When addressing LX desktop environments, it can be break to 2 broad categories. 
  We have the lightweight desktop for limited resources-old-systems
  (**LXDE, Mate and XFCE**). On the other end of the spectrum, **Unity**(heavy resource)
@@ -454,3 +426,4 @@ Add ~/bin to the $PATH environment variable.
 echo 'PATH=$HOME/bin:$PATH' >> .bashrc
 
 .bashrc: Bash shell script that that runs. You can put commadns to setup the shell to use in your particular env. 
+crontab -l List cron jobs - system to schedule tasks, automate tasks
