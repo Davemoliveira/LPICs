@@ -13,39 +13,34 @@
 
 	5) Hardware: Physical devices with compute resources and ability to process and save data for short or long terms. 
 
-							RHEL         GNOME | Init.soft: systemd | Release model: Fixed  | Package: RPM
-
-							CENTOS       GNOME | Init.soft: systemd | Release model: Fixed  | Package: RPM
-
-							FEDORA       GNOME | Init.soft: systemd | Release model: Rolling| Package: RPM
-
-							OPEN.SUSE.   KDE   | Init.soft: systemd | Release model: Rolling| Package: RPM
-
-							UBUNTU       GNOME | Init.soft: systemd | Release model: Rolling| Package: DEB
-
-							DEBIAN       GNOME | Init.soft: systemd | Release model: Rolling| Package: DEB
+					RHEL         GNOME | Init.soft: systemd | Release model: Fixed  | Package: RPM
+					CENTOS       GNOME | Init.soft: systemd | Release model: Fixed  | Package: RPM
+					FEDORA       GNOME | Init.soft: systemd | Release model: Rolling| Package: RPM
+					OPEN.SUSE.   KDE   | Init.soft: systemd | Release model: Rolling| Package: RPM
+					UBUNTU       GNOME | Init.soft: systemd | Release model: Rolling| Package: DEB
+					DEBIAN       GNOME | Init.soft: systemd | Release model: Rolling| Package: DEB
 
 =====================================================================================================================================================
 
-														MAIN DIRECTORIES
+								  MAIN DIRECTORIES
 								
-							/           > Root directory
-							/bin        > User binaries (commands that can be run by users)
-							/boot       > Static boot files
-							/dev        > device files (block/terminal devices/etc - most pseudo devices)
-							/etc        > Configuration files from service and apps
-							/home       > User home directory
-							/lib        > Libraries (shared)
-							/mnt        > Mount(temp mount)
-							/opt        > Optinal packages
-							/proc       > Kernel and file processes
-							/root       > Root home directory
-							/run        > Application state files
-							/sbin       > sys.admin binaries (used by root)
-							/srv        > Service data
-							/tmp        > Temp files (purged after reboot / var/temp(purged after 30 days)
-							/usr        > User binaries
-							/var        > Variable data files
+						/           > Root directory
+						/bin        > User binaries (commands that can be run by users)
+						/boot       > Static boot files
+						/dev        > device files (block/terminal devices/etc - most pseudo devices)
+						/etc        > Configuration files from service and apps
+						/home       > User home directory
+						/lib        > Libraries (shared)
+						/mnt        > Mount(temp mount)
+						/opt        > Optinal packages
+						/proc       > Kernel and file processes
+						/root       > Root home directory
+						/run        > Application state files
+						/sbin       > sys.admin binaries (used by root)
+						/srv        > Service data
+						/tmp        > Temp files (purged after reboot / var/temp(purged after 30 days)
+						/usr        > User binaries
+						/var        > Variable data files
 
 =====================================================================================================================================================
 
