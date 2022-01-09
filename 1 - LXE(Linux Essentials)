@@ -149,3 +149,8 @@
 	Password=#password value[encrypted] | Lastchanged=Nr days since password change Min/Max=Nr days between password changes    
 	Warn= Nr days before pass expiration to warn user | Inactive=Nr days since expiration |Expire=Absolute expiration date
 	redirect to multiple files at the same time: echo "Using tee command" | tee *
+	
+	Script to create automatically 5 folders
+	for i in {1..5}; do mkdir folder_$i; done
+	
+	
