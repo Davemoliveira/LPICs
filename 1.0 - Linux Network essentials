@@ -19,13 +19,13 @@ OSI MODEL
 - 7 Layers that provide a bigger pictture from the hardware to the application layer
 - Helps to isolate and troubleshoot issues to a specific layer
 
-	7 - Application: All intefaces with network (e.g. browser)									(HTTP, FTP, DNS)
+	7 - Application: All intefaces with network (e.g. browser)					(HTTP, FTP, DNS)
 	6 - Presentation: App data is formated for delivery/translated in common network language	(JPEG, GIF, TIFF, MPEG)
-	5 - Session: Start/stop communication between parties traffic								(NFS, RPC, SQL)
+	5 - Session: Start/stop communication between parties traffic					(NFS, RPC, SQL)
 	4 - Transport: Package send msg / Reads messages between layers / Ensures delivery msg		(TCP/UDP)
-	3 - Network: Route data across various LANS and WANS										(IPV4, IPV6)
-	2 - Data: Network cmd. Ensures data is Presentation											(ARP)
-	1 - Physical: Transmittion of data over the network cable (electric signals)				(RJ45. HUB, Bluethooth)
+	3 - Network: Route data across various LANS and WANS						(IPV4, IPV6)
+	2 - Data: Network cmd. Ensures data is Presentation						(ARP)
+	1 - Physical: Transmittion of data over the network cable (electric signals)			(RJ45. HUB, Bluethooth)
 
 NETWORK PROTOCOLS
 - Standard/set of rules for doing something over the network / communicate over the same language
@@ -47,9 +47,9 @@ IP ADDRESSING
 - PORTS: 0-1024 are reserved for known used services (65, 535, 25)
 
 IPV4 ADDRESS
-- 192.168.2   .14         :80
+- 192.168.2       .14         :80
   ---------	 -----------  ----
-   Network   Dev.Host id  Port
+   Network       Dev.Host id  Port
 
 IPV6 ADDRESS
 - x:x:x: x: x:x:x:x | x = 2001:0db8:3a4d
@@ -57,10 +57,10 @@ IPV6 ADDRESS
 - Interface ID: Similar to host devices - identify device on the network
 
 CLASS NETWORKS
-			  OCTECT	OCTECT	 OCTECT	 OCTECT
-	CLASS A	  Network 	 Host     Host    Host (Large networks - 16 Million hosts)
-	CLASS B	  Network   Network   Host    Host (Medium networks - 65.535 hosts)
-	CLASS C	  Network   Network  Network  Host (Small networks - 256 hosts)
+		  OCTECT	OCTECT	 OCTECT	       OCTECT
+	CLASS A	  Network 	 Host     Host    	Host (Large networks - 16 Million hosts)
+	CLASS B	  Network   Network       Host    	Host (Medium networks - 65.535 hosts)
+	CLASS C	  Network   Network      Network  	Host (Small networks - 256 hosts)
 
 - Classes are being moved to CIDR(Class, internet, domain, routing) which is more efficient.
 
@@ -135,30 +135,3 @@ FINDING AND CONNECTING WITH OTHERS
 - Remote system online: ping | < Results can be filtered based on the host configuration
 - IP address layer -> Network layer
 - Routing -> Network layer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
