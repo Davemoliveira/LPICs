@@ -1,1 +1,164 @@
 LX NETWORK ESSENTIALS
+
+COMPUTER NETWORK: 2 or more computers connected to share/exchange data, resources or communicate. 
+- First network (ARPANET) > NFSNET > DIAL UP (AOL) > CLOUD
+- DNS: Phone book of the internet
+- LAN: Computer network with limtied areas such as schools, office, etc.
+- WAN(Wider area network): Conntects small networks all together by the internet
+- TOPOLOGY: Describes on how devices on a network relate to each other (Physical and logically)
+- TYPES of NETWORKS: Ring, Point2Point, Mesh(star), STAM(4 to 1 center), BUS, TREE and HYBRID (Ring+star)
+
+5 NETWORK BUILDING BLOCKS
+- Devices (Mac address) = unique identifier
+- Connections (Cable, Ehternet, Wifi)
+- Switches = Network equipment that connects devices on a network
+- Routers = Directs traffic from one network to another
+- Network server = File sharing(Dropbox), webservers(apache), etc
+
+OSI MODEL
+- 7 Layers that provide a bigger pictture from the hardware to the application layer
+- Helps to isolate and troubleshoot issues to a specific layer
+
+	7 - Application: All intefaces with network (e.g. browser)									(HTTP, FTP, DNS)
+	6 - Presentation: App data is formated for delivery/translated in common network language	(JPEG, GIF, TIFF, MPEG)
+	5 - Session: Start/stop communication between parties traffic								(NFS, RPC, SQL)
+	4 - Transport: Package send msg / Reads messages between layers / Ensures delivery msg		(TCP/UDP)
+	3 - Network: Route data across various LANS and WANS										(IPV4, IPV6)
+	2 - Data: Network cmd. Ensures data is Presentation											(ARP)
+	1 - Physical: Transmittion of data over the network cable (electric signals)				(RJ45. HUB, Bluethooth)
+
+NETWORK PROTOCOLS
+- Standard/set of rules for doing something over the network / communicate over the same language
+- Different protocols: Net communication, Security, Network monitoring, etc
+- Common protocols: HTTP, TCP. UDP, IP, ETHERNET, BLUETHOOTH, etc
+
+NETWORk SERVICES
+- Provides program on network as a service for users/devices over the network
+- Gives value/functionality to computer network. Different categories (e.g Directory file service)
+- Common services: DNS, EMail, Chat, Authentication, etc
+
+IP ADDRESSING
+- ip (192.168.0.1:8080) unique set of numbers that identify a device over the network
+- Composition: Network > City/street | Host id > Building address | Port > Door
+- IPV4(32bib, 4.3 Million), IPV6(128Bit, 340 Trillion^3)
+- Each group is called octec
+- Dynamic IP (DHCP) subject to change
+- NAT: Route data from public network to the privvate OS devices/ (Network address translation)
+- PORTS: 0-1024 are reserved for known used services (65, 535, 25)
+
+IPV4 ADDRESS
+- 192.168.2   .14         :80
+  ---------	 -----------  ----
+   Network   Dev.Host id  Port
+
+IPV6 ADDRESS
+- x:x:x: x: x:x:x:x | x = 2001:0db8:3a4d
+- Subnet: Describers layer of private network subnet
+- Interface ID: Similar to host devices - identify device on the network
+
+CLASS NETWORKS
+			  OCTECT	OCTECT	 OCTECT	 OCTECT
+	CLASS A	  Network 	 Host     Host    Host (Large networks - 16 Million hosts)
+	CLASS B	  Network   Network   Host    Host (Medium networks - 65.535 hosts)
+	CLASS C	  Network   Network  Network  Host (Small networks - 256 hosts)
+
+- Classes are being moved to CIDR(Class, internet, domain, routing) which is more efficient.
+
+IP SUBNETTING
+- Divides network in smaller networks
+- Parts of host portion of an IP are changed to define the subnet address
+- Subnet mask tells devices which portioon of the IP address to use for the subnet
+- Makes networks more easy to manage; Better allocation of IP address are chaanged to define subnet add.
+
+     Before Subnetting
+	 -----------------     192.168.0.0
+	|  [pc] [pc] [pc] |-------[==]-------[Internet]
+	 -----------------
+	    192.168.1.0
+
+     After Subnetting
+	 -----------------  
+	|  [pc] [pc] [pc] |-\
+	 -----------------   \    192.168.0.0
+	    192.168.1.0       -------[==]-------[Internet]
+     -----------------   /
+	|  [pc] [pc] [pc] |-/
+	 -----------------
+	 	192.168.2.0
+
+DNS: What's their number
+- DNS: Phonebook of networks, translates human-readable domain
+- DOMAIN name: E.g www.google.com 4levels(Root, TLD, 2nd and 3rd level)
+- DNS RECORDS: List of info/instructions about a domain Eg the ip of example.com
+- RECURSIVE NAMESERVER: 1st nameserver is a DNS query communicaes with other servers (DNS QUERY)
+- ROOT NAMESERVER: Handles receivce nameserver queries managed by ICANN
+- AUTHORITIVE NAMESERVER: Final NS in a query holds the IP info for the domain names (A, PTR records)
+- TLD NAME SERVER: Top level domain - handles info on .com. .org, etc
+
+DOMAIN STRUCTURE
+	1. . = Domain
+	2. .com = Top level domain
+	3. Google = 2nd level domain
+	4. mail.google.com = third level (subdomain)
+	^ FULLY QUALIFIED DOMAIN NAME (FQDN)
+
+HOW DNS QUERY WORKS?
+[1]	[2]	[3]	[4]	[5]	[6]	[7]
+	> [1] Client asks what is the IP of www.x.com
+	> [2] Root NS - Let me ask rooting
+	> [3] TLD NS handles - Ask him
+	> [2] Root NS - Tell me about x.com
+	> [5] Ask the auth.NS
+	> [2] Root NS - Tell me about x.com
+	> [7] 192.0.0.0
+
+ROUTING
+- Manages data from one network to another. Routers find data between them set optimal path to use.
+- Packets: Contain data, source and destination address + sequence number
+- Routing table: Routers store info about other networks (from other routers)
+- Routing protocols: Router have their own rules for communication, how they share info on other networks
+- Static routes: Use the same path (always) to send data between networks
+- Dynamic: Change path of data packaages sent based on the network cogestion, outages, etc
+
+SETTING A STATIC HOST ENTRY IN LINUX
+- sudo vi /etc/hosts | add the lines: <Ip address>
+
+FINDING MY NETWORK INFO
+- ip ddress: ip | legacy: ifconfig
+- Route: ip | Legacy: route / netstat
+- Network management: nmcli
+- View/edit /etc/resolv.conf to list resolvers used for the system
+
+FINDING AND CONNECTING WITH OTHERS
+- Remote ip info: dig x.com | Legacy: host \ nslookup
+- Routing: traceroute | legacy: none
+- Remote system online: ping | < Results can be filtered based on the host configuration
+- IP address layer -> Network layer
+- Routing -> Network layer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
