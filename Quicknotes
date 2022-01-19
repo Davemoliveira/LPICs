@@ -14,3 +14,4 @@ TMUX
   > set -g base-index 1 (set the index number starting at 1 
   > set -g mouse on
   
+- Root user for Windows Ubuntu: sudo su
