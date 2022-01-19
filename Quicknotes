@@ -1,0 +1,16 @@
+TMUX
+- VERTICAL/HORIZONTAL: CTRL+B % | "
+- NEW/RENAME WINDOW: CTRL+B C | ,
+- NEW SESSION: tmux new -s <name>
+- VIEW ALL SESSIONS: tmux ls
+- Attach/Detach session: tmux attach -t <nbr> | CTRL+B d
+- Rename/Delete session: tmux rename-session -t 0 <new_name> | tmux kill-session -t <name>
+- CTRL+b l/p/n : Last/previous/next windows
+- copy mode: CTRL+B [ | Search up/Down: ? - / | ctrl+B ] = paste
+- CONFIG FILE: ~/.tmux.conf
+  > set -g prefux C-S <- Example
+  > unbind  C-b
+  > bind C-b send-prefix
+  > set -g base-index 1 (set the index number starting at 1 
+  > set -g mouse on
+  
