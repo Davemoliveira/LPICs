@@ -15,3 +15,8 @@ TMUX
   > set -g mouse on
   
 - Root user for Windows Ubuntu: sudo su
+
+VIM
+:reg = see the registry
+sda
+dated
