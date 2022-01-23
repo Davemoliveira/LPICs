@@ -1,1 +1,31 @@
+SETTING UP SHELL ENVIRONMENTS
+- TYPE 1: Interactive login shell: Created when we login into a console or login remotely via SSH 
+- TYPE 2: Non-login shell: Created when terminal app as GNOME terminal is started
+
+CONFIGURATION FILES
+- etc/profile: Set up system wide env. variables, umask values
+- etc\profile_d: Extra scrip files for bash. 
+- etc\bashrc = config system wide functions and alias here
+- etc\skel = contain bash_profile, bashrc that are added to user home directory
+
+- ~/.bash_profile = user modified path environment and will source the .bashrc file.
+- ~/.bashrc = local user command and alias and functions.
+- ~/.bash_logout = call on user logout and can be used to shut down apps
+- ~/.bash_login = called on user login
+
+CUSTOM SHELL ENVIRONMENT
+- export = used to export variables to allow child shell sessions to user variable environments
+- set = display all bash settings, variables, functions;
+- unset = Remove variable and its value
+- alias = create shortcuts for longer commands
+- functions = function name [making persistent: ~/.bashrc]
+
+SCRIPTS
+- ls $1 $12 => $1(arg1) $2(arg2)
+- check if dir exists: if [ -d /opt ]; then echo "x" fi
+
+- for: loop over for fixed number of times
+- while = loops until indicated contition is false. It will run while its true
+- until = similar to while but loops stops when condition is true
+- cmd.substition - when stdout of a cmd is used with other command
 
